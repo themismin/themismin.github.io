@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="小敏的博客, mingo">
+  <meta name="keywords" content="jenkins,持续集成,">
 
 
 
@@ -87,13 +87,14 @@
 
 
 <meta name="description" content="Jenkins是一款由Java编写的开源的持续集成工具。">
+<meta name="keywords" content="jenkins,持续集成">
 <meta property="og:type" content="article">
 <meta property="og:title" content="运维-Jeknins安装">
 <meta property="og:url" content="https://blog.themismin.com/posts/1363d69a.html">
 <meta property="og:site_name" content="小敏的博客">
 <meta property="og:description" content="Jenkins是一款由Java编写的开源的持续集成工具。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-24T07:31:30.163Z">
+<meta property="og:updated_time" content="2019-05-28T06:27:28.850Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="运维-Jeknins安装">
 <meta name="twitter:description" content="Jenkins是一款由Java编写的开源的持续集成工具。">
@@ -314,6 +315,39 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/" itemprop="url" rel="index">
+                    <span itemprop="name">IT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/运维/" itemprop="url" rel="index">
+                    <span itemprop="name">运维</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -363,7 +397,7 @@
 
       
         <p>Jenkins是一款由Java编写的开源的持续集成工具。<br><a id="more"></a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"># 添加源</span><br><span class="line">wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo</span><br><span class="line"></span><br><span class="line">cat /etc/yum.repos.d/jenkins.repo</span><br><span class="line"></span><br><span class="line">rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key</span><br><span class="line"></span><br><span class="line"># yum 安装</span><br><span class="line">yum install jenkins</span><br><span class="line"></span><br><span class="line"># 启动</span><br><span class="line">systemctl restart jenkins</span><br><span class="line">systemctl status jenkins</span><br><span class="line">systemctl enable jenkins</span><br><span class="line"></span><br><span class="line"># 配置nginx</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name jenkins.mingo.com;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl; # managed by Certbot</span><br><span class="line">    ssl_certificate /etc/letsencrypt/live/jenkins.mingo.com/fullchain.pem; # managed by Certbot</span><br><span class="line">    ssl_certificate_key /etc/letsencrypt/live/jenkins.mingo.com/privkey.pem; # managed by Certbot</span><br><span class="line">    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot</span><br><span class="line">    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot</span><br><span class="line"></span><br><span class="line">    if ($scheme != &quot;https&quot;) &#123;</span><br><span class="line">        return 301 https://$host$request_uri;</span><br><span class="line">    &#125; # managed by Certbot</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://127.0.0.1:8080;</span><br><span class="line">        proxy_redirect     default;</span><br><span class="line">        proxy_set_header   Host              $host;</span><br><span class="line">        proxy_set_header   X-Real-IP         $remote_addr;</span><br><span class="line">        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_set_header   X-Forwarded-Proto $scheme;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"># java 安装</span><br><span class="line">https://www.oracle.com/technetwork/java/javase/downloads/index.html</span><br><span class="line"></span><br><span class="line">yum localinstall jdk-8u191-linux-x64.rpm</span><br><span class="line"></span><br><span class="line"># 添加源</span><br><span class="line">wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo</span><br><span class="line"></span><br><span class="line">cat /etc/yum.repos.d/jenkins.repo</span><br><span class="line"></span><br><span class="line">rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key</span><br><span class="line"></span><br><span class="line"># yum 安装</span><br><span class="line">yum install jenkins</span><br><span class="line"></span><br><span class="line"># 启动</span><br><span class="line">systemctl restart jenkins</span><br><span class="line">systemctl status jenkins</span><br><span class="line">systemctl enable jenkins</span><br><span class="line"></span><br><span class="line"># 配置nginx</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name jenkins.mingo.com;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl; # managed by Certbot</span><br><span class="line">    ssl_certificate /etc/letsencrypt/live/jenkins.mingo.com/fullchain.pem; # managed by Certbot</span><br><span class="line">    ssl_certificate_key /etc/letsencrypt/live/jenkins.mingo.com/privkey.pem; # managed by Certbot</span><br><span class="line">    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot</span><br><span class="line">    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot</span><br><span class="line"></span><br><span class="line">    if ($scheme != &quot;https&quot;) &#123;</span><br><span class="line">        return 301 https://$host$request_uri;</span><br><span class="line">    &#125; # managed by Certbot</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://127.0.0.1:8080;</span><br><span class="line">        proxy_redirect     default;</span><br><span class="line">        proxy_set_header   Host              $host;</span><br><span class="line">        proxy_set_header   X-Real-IP         $remote_addr;</span><br><span class="line">        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_set_header   X-Forwarded-Proto $scheme;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="任务配置"><a href="#任务配置" class="headerlink" title="任务配置"></a>任务配置</h2><ul>
 <li>安装 Publish over SSH 插件，实现远程自动部署插件</li>
 <li>安装 Git Parameter 插件，实现分支构建</li>
@@ -393,7 +427,7 @@
 </ul>
 </li>
 </ul>
-
+<div><h2>推荐文章</h2><ul><li><a href="http://linfuyan.com/continuous-integration-of-ios-application-with-jenkins-git-cocoapods-fir.im/">Jenkins、Git、CocoaPods、Fir.im 实现 iOS 应用持续集成</a></li><li><a href="http://linfuyan.com/what-is-jenkins/">什么是 Jenkins?</a></li><li><a href="http://www.ithome.me/archives/jenkins-fastlane-ios自动化打包实战/">jenkins+fastlane+ios自动化打包实战</a></li></ul></div>
       
     </div>
     
@@ -436,6 +470,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jenkins/" rel="tag"># jenkins</a>
+          
+            <a href="/tags/持续集成/" rel="tag"># 持续集成</a>
+          
+        </div>
       
 
       
@@ -540,7 +582,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -562,7 +604,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -649,7 +691,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任务配置"><span class="nav-number">2.</span> <span class="nav-text">任务配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限配置"><span class="nav-number">3.</span> <span class="nav-text">权限配置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任务配置"><span class="nav-number">2.</span> <span class="nav-text">任务配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限配置"><span class="nav-number">3.</span> <span class="nav-text">权限配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">推荐文章</span></a></li></ol></div>
             
 
           </div>
