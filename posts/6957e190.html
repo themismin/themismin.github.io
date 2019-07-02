@@ -419,7 +419,7 @@
 <h2 id="重启宿主机后启动-ShowDoc"><a href="#重启宿主机后启动-ShowDoc" class="headerlink" title="重启宿主机后启动 ShowDoc"></a>重启宿主机后启动 ShowDoc</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker update --restart=always showdoc</span><br></pre></td></tr></table></figure>
 <h2 id="配置-Nginx-反向代理"><a href="#配置-Nginx-反向代理" class="headerlink" title="配置 Nginx 反向代理"></a>配置 Nginx 反向代理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    listen       [::]:80;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl; # managed by Certbot</span><br><span class="line">    ssl_certificate /etc/letsencrypt/live/doc.domainname.com/fullchain.pem; # managed by Certbot</span><br><span class="line">    ssl_certificate_key /etc/letsencrypt/live/doc.domainname.com/privkey.pem; # managed by Certbot</span><br><span class="line">    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot</span><br><span class="line">    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot</span><br><span class="line"></span><br><span class="line">    if ($scheme != &quot;https&quot;) &#123;</span><br><span class="line">        return 301 https://$host$request_uri;</span><br><span class="line">    &#125; # managed by Certbot</span><br><span class="line"></span><br><span class="line">    server_name doc.domainname.com;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://127.0.0.1:4999;</span><br><span class="line">        proxy_redirect     default;</span><br><span class="line">        proxy_set_header   Host              $host;</span><br><span class="line">        proxy_set_header   X-Real-IP         $remote_addr;</span><br><span class="line">        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_set_header   X-Forwarded-Proto $scheme;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 启动</span><br><span class="line">./showdoc start </span><br><span class="line"># 停止</span><br><span class="line">./showdoc stop </span><br><span class="line"># 重启</span><br><span class="line">./showdoc restart</span><br><span class="line"># 升级showdoc到最新版</span><br><span class="line">./showdoc update</span><br><span class="line"># 卸载showdoc</span><br><span class="line">./showdoc uninstall</span><br><span class="line"></span><br><span class="line"># docker 命令</span><br><span class="line"># 启动</span><br><span class="line">docker start showdoc</span><br><span class="line"># 停止</span><br><span class="line">docker stop showdoc</span><br><span class="line"># 重启</span><br><span class="line">docker restart showdoc</span><br></pre></td></tr></table></figure>
-<div><h2>推荐文章</h2><ul><li><a href="https://www.themismin.com/posts/6957e190.html">运维-Api文档管理 ShowDoc 安装</a></li><li><a href="https://www.themismin.com/posts/6957e190.html">运维-Api文档管理 ShowDoc 安装</a></li></ul></div>
+
       
     </div>
     
@@ -480,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/9db60fc0.html" rel="next" title="运维-搜索引擎安装 Elasticsearch">
-                <i class="fa fa-chevron-left"></i> 运维-搜索引擎安装 Elasticsearch
+              <a href="/posts/87988452.html" rel="next" title="运维-搜索引擎安装 迅搜">
+                <i class="fa fa-chevron-left"></i> 运维-搜索引擎安装 迅搜
               </a>
             
           </div>
@@ -574,7 +574,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -585,7 +585,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -596,7 +596,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -683,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动脚本安装-docker"><span class="nav-number">1.1.</span> <span class="nav-text">自动脚本安装 docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动安装"><span class="nav-number">1.2.</span> <span class="nav-text">手动安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启宿主机后启动-ShowDoc"><span class="nav-number">2.</span> <span class="nav-text">重启宿主机后启动 ShowDoc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-Nginx-反向代理"><span class="nav-number">3.</span> <span class="nav-text">配置 Nginx 反向代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他命令"><span class="nav-number">4.</span> <span class="nav-text">其他命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">推荐文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动脚本安装-docker"><span class="nav-number">1.1.</span> <span class="nav-text">自动脚本安装 docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动安装"><span class="nav-number">1.2.</span> <span class="nav-text">手动安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启宿主机后启动-ShowDoc"><span class="nav-number">2.</span> <span class="nav-text">重启宿主机后启动 ShowDoc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-Nginx-反向代理"><span class="nav-number">3.</span> <span class="nav-text">配置 Nginx 反向代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他命令"><span class="nav-number">4.</span> <span class="nav-text">其他命令</span></a></li></ol></div>
             
 
           </div>
