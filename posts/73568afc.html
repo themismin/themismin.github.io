@@ -154,7 +154,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -164,7 +164,7 @@
   <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -274,20 +274,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/73568afc.html">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小敏的博客">
     </span>
 
@@ -341,7 +341,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/" itemprop="url" rel="index">
                     <span itemprop="name">IT</span>
                   </a>
@@ -352,7 +352,7 @@
                   ， 
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/运维/" itemprop="url" rel="index">
                     <span itemprop="name">运维</span>
                   </a>
@@ -418,36 +418,36 @@
 <h2 id="挂载云硬盘"><a href="#挂载云硬盘" class="headerlink" title="挂载云硬盘"></a>挂载云硬盘</h2><h3 id="查看硬盘信息"><a href="#查看硬盘信息" class="headerlink" title="查看硬盘信息"></a>查看硬盘信息</h3><blockquote>
 <p>运行 fdisk -l 命令，此时可以看到随云服务器创建的非弹性云硬盘 vda 和刚刚挂载的弹性云盘 vdb</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901261708.png-white" alt></p>
+<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901261708.png-white" alt=""></p>
 <h3 id="查看弹性云盘与设备名的对应关系"><a href="#查看弹性云盘与设备名的对应关系" class="headerlink" title="查看弹性云盘与设备名的对应关系"></a>查看弹性云盘与设备名的对应关系</h3><blockquote>
 <p>执行 ls -l /dev/disk/by-id/ 命令，<br>可以在此处看到弹性云盘与设备名的对应关系。注意：非弹性云盘目前不会在这里显示任何信息</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901261717.png-white" alt></p>
+<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901261717.png-white" alt=""></p>
 <h3 id="列出特殊信息，例如文件系统类型。"><a href="#列出特殊信息，例如文件系统类型。" class="headerlink" title="列出特殊信息，例如文件系统类型。"></a>列出特殊信息，例如文件系统类型。</h3><blockquote>
 <p>执行 file -s device 命令<br>命令的输出仅显示该设备的 data，则说明设备上没有文件系统，您需要创建一个文件系统。<br>如果在包含文件系统的设备上运行此命令，则输出将有所不同，若返回形如 Linux rev 1.0 ext4 filesystem data的输出则说明此硬盘上已经创建了文件系统。</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901261723.png-white" alt></p>
+<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901261723.png-white" alt=""></p>
 <h3 id="对磁盘进行分区操作（可选）"><a href="#对磁盘进行分区操作（可选）" class="headerlink" title="对磁盘进行分区操作（可选）"></a>对磁盘进行分区操作（可选）</h3><blockquote>
 <p>执行 fdisk /dev/vdb 命令<br>依次输入“n”(新建分区)、“p”(新建主分区)、“1”(使用第1个主分区)，两次回车(使用默认配置)，输入“wq”(保存分区表)，回车开始分区</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901261753.png-white" alt></p>
+<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901261753.png-white" alt=""></p>
 <blockquote>
 <p>使用“fdisk -l”命令，即可查看到，新的分区 vdb1 已经创建完成</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901271017.png-white" alt></p>
+<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901271017.png-white" alt=""></p>
 <h3 id="硬盘格式化"><a href="#硬盘格式化" class="headerlink" title="硬盘格式化"></a>硬盘格式化</h3><blockquote>
 <p>执行 mkfs.ext4 device_name 格式化并删除现有数据</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901271018.png-white" alt></p>
+<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901271018.png-white" alt=""></p>
 <h3 id="挂载新分区"><a href="#挂载新分区" class="headerlink" title="挂载新分区"></a>挂载新分区</h3><blockquote>
 <p>执行 mkdir /data/part1 -p 创建挂载点<br>执行 mount /dev/vdb1 /data/part1 将 vdb1挂载到 /data/part1 处<br>执行 lsblk -f 命令查询文件系统UUID和挂载点信息<br>执行  df -h 命令查看查看到数据盘</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901271040.png-white" alt></p>
+<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901271040.png-white" alt=""></p>
 <h3 id="自动挂载新分区（开机自动挂载数据盘）"><a href="#自动挂载新分区（开机自动挂载数据盘）" class="headerlink" title="自动挂载新分区（开机自动挂载数据盘）"></a>自动挂载新分区（开机自动挂载数据盘）</h3><blockquote>
 <p>执行 mkdir /data/part1 -p 创建挂载点<br>执行 echo ‘/dev/vdb1 /data/part1 ext4 defaults 0 0’ &gt;&gt; /etc/fstab 命令添加分区信息<br>运行 cat /etc/fstab 命令查看<br>运行 mount -a 命令，如果运行通过则说明文件正常，刚刚创建的文件系统会在下次启动时自动安装</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901271100.png-white" alt></p>
-<div><h2>推荐文章</h2><ul><li><a href="https://blog.themismin.com/posts/7f43682f.html">CentOS-配置 SWAP 分区</a></li><li><a href="https://blog.themismin.com/posts/9d04baee.html">CentOS-服务器初始化配置</a></li><li><a href="https://blog.themismin.com/posts/fc47c0f9.html">CentOS-Nginx PHP-FPM 安装配置</a></li><li><a href="chunlife.top/2019/04/09/服务器上传下载问题之分块上传（断点续传）/">服务器上传下载问题之分块上传（断点续传）</a></li><li><a href="www.chunlife.top/2019/04/09/服务器上传下载问题之分块上传（断点续传）/">服务器上传下载问题之分块上传（断点续传）</a></li><li><a href="www.chunlife.top/2018/09/02/服务器上传下载问题/">服务器上传下载问题</a></li></ul></div>
+<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901271100.png-white" alt=""></p>
+
       
     </div>
     
@@ -593,7 +593,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="小敏-mingo">
             
@@ -608,7 +608,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -717,7 +717,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载云硬盘"><span class="nav-number">2.</span> <span class="nav-text">挂载云硬盘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看硬盘信息"><span class="nav-number">2.1.</span> <span class="nav-text">查看硬盘信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看弹性云盘与设备名的对应关系"><span class="nav-number">2.2.</span> <span class="nav-text">查看弹性云盘与设备名的对应关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出特殊信息，例如文件系统类型。"><span class="nav-number">2.3.</span> <span class="nav-text">列出特殊信息，例如文件系统类型。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对磁盘进行分区操作（可选）"><span class="nav-number">2.4.</span> <span class="nav-text">对磁盘进行分区操作（可选）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬盘格式化"><span class="nav-number">2.5.</span> <span class="nav-text">硬盘格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#挂载新分区"><span class="nav-number">2.6.</span> <span class="nav-text">挂载新分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动挂载新分区（开机自动挂载数据盘）"><span class="nav-number">2.7.</span> <span class="nav-text">自动挂载新分区（开机自动挂载数据盘）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">推荐文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载云硬盘"><span class="nav-number">2.</span> <span class="nav-text">挂载云硬盘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看硬盘信息"><span class="nav-number">2.1.</span> <span class="nav-text">查看硬盘信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看弹性云盘与设备名的对应关系"><span class="nav-number">2.2.</span> <span class="nav-text">查看弹性云盘与设备名的对应关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出特殊信息，例如文件系统类型。"><span class="nav-number">2.3.</span> <span class="nav-text">列出特殊信息，例如文件系统类型。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对磁盘进行分区操作（可选）"><span class="nav-number">2.4.</span> <span class="nav-text">对磁盘进行分区操作（可选）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬盘格式化"><span class="nav-number">2.5.</span> <span class="nav-text">硬盘格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#挂载新分区"><span class="nav-number">2.6.</span> <span class="nav-text">挂载新分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动挂载新分区（开机自动挂载数据盘）"><span class="nav-number">2.7.</span> <span class="nav-text">自动挂载新分区（开机自动挂载数据盘）</span></a></li></ol></li></ol></div>
             
 
           </div>
