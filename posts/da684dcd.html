@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="安装123yum install supervisoryum status supervisoryum enable supervisor 参数123```## 配置新增 /etc/supervisord.d/laravel-worker.ini [program:laravel-worker]process_name=%(program_name)s_%(process_num)02dcomma">
+<meta name="description" content="安装123yum install supervisoryum status supervisoryum enable supervisor 参数1# 配置新增 /etc/supervisord.d/laravel-worker.ini123456789[program:laravel-worker]process_name=%(program_name)s_%(process_num)02dcom">
 <meta property="og:type" content="article">
 <meta property="og:title" content="运维-Supervisor 安装配置">
 <meta property="og:url" content="https://blog.themismin.com/posts/da684dcd.html">
 <meta property="og:site_name" content="小敏的博客">
-<meta property="og:description" content="安装123yum install supervisoryum status supervisoryum enable supervisor 参数123```## 配置新增 /etc/supervisord.d/laravel-worker.ini [program:laravel-worker]process_name=%(program_name)s_%(process_num)02dcomma">
+<meta property="og:description" content="安装123yum install supervisoryum status supervisoryum enable supervisor 参数1# 配置新增 /etc/supervisord.d/laravel-worker.ini123456789[program:laravel-worker]process_name=%(program_name)s_%(process_num)02dcom">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-24T07:31:30.165Z">
+<meta property="og:updated_time" content="2019-08-07T03:00:28.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="运维-Supervisor 安装配置">
-<meta name="twitter:description" content="安装123yum install supervisoryum status supervisoryum enable supervisor 参数123```## 配置新增 /etc/supervisord.d/laravel-worker.ini [program:laravel-worker]process_name=%(program_name)s_%(process_num)02dcomma">
+<meta name="twitter:description" content="安装123yum install supervisoryum status supervisoryum enable supervisor 参数1# 配置新增 /etc/supervisord.d/laravel-worker.ini123456789[program:laravel-worker]process_name=%(program_name)s_%(process_num)02dcom">
 
 
 
@@ -363,8 +363,8 @@
 
       
         <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install supervisor</span><br><span class="line">yum status supervisor</span><br><span class="line">yum enable supervisor</span><br></pre></td></tr></table></figure>
-<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">## 配置</span><br><span class="line">新增 /etc/supervisord.d/laravel-worker.ini</span><br></pre></td></tr></table></figure>
-<p>[program:laravel-worker]<br>process_name=%(program_name)s_%(process_num)02d<br>command=php /path/artisan queue:work database –queue=all_comment<br>autostart=true<br>autorestart=true<br>user=forge<br>numprocs=8<br>redirect_stderr=true<br>stdout_logfile=/var/www/zhenyouhaofang/storage/logs/worker.log<br><code>`</code></p>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#</span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>新增 /etc/supervisord.d/laravel-worker.ini<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[program:laravel-worker]</span><br><span class="line">process_name=%(program_name)s_%(process_num)02d</span><br><span class="line">command=php /path/artisan queue:work database --queue=all_comment</span><br><span class="line">autostart=true</span><br><span class="line">autorestart=true</span><br><span class="line">user=forge</span><br><span class="line">numprocs=8</span><br><span class="line">redirect_stderr=true</span><br><span class="line">stdout_logfile=/var/www/zhenyouhaofang/storage/logs/worker.log</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -512,7 +512,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -534,7 +534,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -621,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数"><span class="nav-number">2.</span> <span class="nav-text">参数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数"><span class="nav-number">2.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a></li></ol></div>
             
 
           </div>
