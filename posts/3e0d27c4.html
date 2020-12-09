@@ -6,7 +6,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -94,18 +94,10 @@
 <meta property="og:site_name" content="小敏的博客">
 <meta property="og:description" content="不蒜子是 Bruce 开发的一款轻量级的网页计数器，它的口号是（非官方）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190214143002.png-black">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190214143056.png-black">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190214143318.png-black">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190214143616.png-black">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190214143741.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190218170414.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190214150246.png-white">
-<meta property="og:updated_time" content="2019-04-04T06:21:31.082Z">
+<meta property="og:updated_time" content="2020-11-02T08:07:41.417Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-站点统计配置">
 <meta name="twitter:description" content="不蒜子是 Bruce 开发的一款轻量级的网页计数器，它的口号是（非官方）">
-<meta name="twitter:image" content="http://blogimg.tuotuu.com/images/posts/20190214143002.png-black">
 
 
 
@@ -153,7 +145,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -163,7 +155,7 @@
   <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -273,20 +265,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/3e0d27c4.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小敏的博客">
     </span>
 
@@ -340,7 +332,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/" itemprop="url" rel="index">
                     <span itemprop="name">IT</span>
                   </a>
@@ -351,7 +343,7 @@
                   ， 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/Hexo/" itemprop="url" rel="index">
                     <span itemprop="name">Hexo</span>
                   </a>
@@ -414,28 +406,25 @@
 <h2 id="LeanCloud-配置使用"><a href="#LeanCloud-配置使用" class="headerlink" title="LeanCloud 配置使用"></a>LeanCloud 配置使用</h2><blockquote>
 <p>注册 <a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud</a> 账号<br>创建 blog 应用</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/20190214143002.png-black" alt=""></p>
 <blockquote>
-<p>创建存储，Class名称必须为Counter</p>
+<p>创建存储，Class名称必须为Counter，ACL权限为限制写入</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/20190214143056.png-black" alt=""></p>
 <blockquote>
 <p>设置 Web 安全域名</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/20190214143318.png-black" alt=""></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://blog.themismin.com/</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>查看 App ID 和 App Key</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/20190214143616.png-black" alt=""></p>
 <blockquote>
 <p>找到站点的 themes/next 目录下的 _config.yml 文件，开启 LeanCloud Visitors，配置 App ID 和 App Key</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/20190214143741.png-white" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  color:  fc6423</span><br><span class="line"># ---------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"># Show number of visitors to each article.</span><br><span class="line"># You can visit https://leancloud.cn get AppID and AppKey.</span><br><span class="line">leancloud_visitors:</span><br><span class="line">  enable: true</span><br><span class="line">  app_id: 1DQSfsF895qG5aRVX3uJtvvL-gzGzoHsz</span><br><span class="line">  app_key: Hnjs1VR4xXd6lECIsgxwCMIE</span><br><span class="line"></span><br><span class="line"># Another tool to show number of visitors to each article.</span><br><span class="line"># visit https://console.firebase.google.com/u/0/ to get apiKey and projectId</span><br><span class="line"># visit https://firebase.google.com/docs/firestore/ to get more information about firestore</span><br><span class="line">firestore:</span><br><span class="line">  enable: false</span><br></pre></td></tr></table></figure>
 <h2 id="不蒜子配置使用"><a href="#不蒜子配置使用" class="headerlink" title="不蒜子配置使用"></a>不蒜子配置使用</h2><blockquote>
 <p>找到站点的 themes/next/layout/_partials 目录下的 footer.swig 文件，插入代码如下</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/20190218170414.png-white" alt=""></p>
-<h2 id="完成以上所有部署后，运行发布命令"><a href="#完成以上所有部署后，运行发布命令" class="headerlink" title="完成以上所有部署后，运行发布命令"></a>完成以上所有部署后，运行发布命令</h2><p>  <img src="http://blogimg.tuotuu.com/images/posts/20190214150246.png-white" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  #&#125;&#123;&#123; __(&apos;footer.theme&apos;) &#125;&#125; &amp;mdash; &#123;#</span><br><span class="line">  #&#125;&lt;a class=&quot;theme-link&quot; target=&quot;_blank&quot; href=&quot;https://github.com/iissnan/hexo-theme-next&quot;&gt;&#123;#</span><br><span class="line">    #&#125;NexT.&#123;&#123; theme.scheme &#125;&#125;&#123;#</span><br><span class="line">  #&#125;&lt;/a&gt;&#123;% if theme.footer.theme.version %&#125; v&#123;&#123; theme.version &#125;&#125;&#123;% endif %&#125;&#123;#</span><br><span class="line">#&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;# 此位置插入不蒜子统计代码 #&#125;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;span&gt;本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;</span><br><span class="line">  &lt;span&gt;本站访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% if theme.footer.custom_text %&#125;</span><br><span class="line">  &lt;div class=&quot;footer-custom&quot;&gt;&#123;#</span><br><span class="line">  #&#125;&#123;&#123; theme.footer.custom_text &#125;&#125;&#123;#</span><br></pre></td></tr></table></figure>
+<h2 id="完成以上所有部署后，运行发布命令"><a href="#完成以上所有部署后，运行发布命令" class="headerlink" title="完成以上所有部署后，运行发布命令"></a>完成以上所有部署后，运行发布命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate --deploy</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -580,7 +569,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="小敏-mingo">
             
@@ -595,7 +584,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -606,7 +595,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -617,7 +606,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-count">86</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -724,7 +713,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

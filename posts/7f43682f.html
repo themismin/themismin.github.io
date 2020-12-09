@@ -6,7 +6,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -94,17 +94,10 @@
 <meta property="og:site_name" content="小敏的博客">
 <meta property="og:description" content="Swap分区在系统的物理内存不够用的时候，把物理内存中的一部分空间释放出来，以供当前运行的程序使用。那些被释放的空间可能来自一些很长时间没有什么操作的程序，这些被释放的空间被临时保存到Swap分区中，等到那些程序要运行时，再从Swap分区中恢复保存的数据到内存中。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190218154254.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190218154504.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190218154530.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190218154619.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190218154808.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/20190218155605.png-white">
-<meta property="og:updated_time" content="2019-04-04T06:21:34.703Z">
+<meta property="og:updated_time" content="2020-11-02T07:58:39.026Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS-配置 SWAP 分区">
 <meta name="twitter:description" content="Swap分区在系统的物理内存不够用的时候，把物理内存中的一部分空间释放出来，以供当前运行的程序使用。那些被释放的空间可能来自一些很长时间没有什么操作的程序，这些被释放的空间被临时保存到Swap分区中，等到那些程序要运行时，再从Swap分区中恢复保存的数据到内存中。">
-<meta name="twitter:image" content="http://blogimg.tuotuu.com/images/posts/20190218154254.png-white">
 
 
 
@@ -152,7 +145,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -162,7 +155,7 @@
   <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -272,20 +265,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/7f43682f.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小敏的博客">
     </span>
 
@@ -339,7 +332,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/" itemprop="url" rel="index">
                     <span itemprop="name">IT</span>
                   </a>
@@ -350,7 +343,7 @@
                   ， 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/运维/" itemprop="url" rel="index">
                     <span itemprop="name">运维</span>
                   </a>
@@ -413,27 +406,21 @@
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote>
 <p>执行 free -m 查看系统内存情况</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/20190218154254.png-white" alt=""></p>
 <blockquote>
 <p>生成一个文件作为 SWAP 交换分区<br>/bin/dd if=/dev/zero of=/var/swap bs=1M count=8192</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/20190218154504.png-white" alt=""></p>
 <blockquote>
 <p>修改文件权限 chmod 0600 /var/swap</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/20190218154530.png-white" alt=""></p>
 <blockquote>
 <p>将生成的文件格式化成交换分区 /sbin/mkswap /var/swap<br>启动 SWAP 分区并查看状态 /sbin/swapon /var/swap<br>显示交换区的使用状况 swapon -s</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/20190218154619.png-white" alt=""></p>
 <blockquote>
 <p>cat /proc/sys/vm/swappiness 查看 SWAP 何时使用<br>编辑 /etc/sysctl.conf 设置 SWAP 何时使用（vm.swappiness = 30）</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/20190218154808.png-white" alt=""></p>
 <blockquote>
 <p>自动挂载 SWAP 分区 echo “/var/swap swap swap defaults 0 0” &gt;&gt; /etc/fstab<br>关机重启后，执行 swapon -s 查看交换分区信息或执行 free -m 查看系统内存情况</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/20190218155605.png-white" alt=""></p>
 
       
     </div>
@@ -582,7 +569,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="小敏-mingo">
             
@@ -597,7 +584,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -608,7 +595,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -619,7 +606,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-count">86</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -726,7 +713,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

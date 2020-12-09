@@ -6,7 +6,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -140,7 +140,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -151,7 +151,7 @@
   page-home">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -262,20 +262,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/d9de7c8f.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/33f41d5a.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小敏的博客">
     </span>
 
@@ -286,7 +286,352 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/d9de7c8f.html" itemprop="url">运维-centos7 升级内核-开启 bbr 加速</a></h1>
+                <a class="post-title-link" href="/posts/33f41d5a.html" itemprop="url">Hadoop-基础教程</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T16:44:30+08:00">
+                2020-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/" itemprop="url" rel="index">
+                    <span itemprop="name">IT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/33f41d5a.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/33f41d5a.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/33f41d5a.html" class="leancloud_visitors" data-flag-title="Hadoop-基础教程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">centos7下载 http://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7-x86_64-Vagrant-2002_01.VirtualBox.box</span><br><span class="line"></span><br><span class="line">jdk下载 https://www.oracle.com/java/technologies/javase-jdk8-downloads.html</span><br><span class="line"></span><br><span class="line">hadoop下载 https://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.16.2.tar.gz</span><br><span class="line"></span><br><span class="line">hive下载 https://archive.cloudera.com/cdh5/cdh/5/hive-1.1.0-cdh5.16.2.tar.gz</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vagrant box add centos7 CentOS-7-x86_64-Vagrant-2002_01.VirtualBox.box</span><br><span class="line">vagrant box list</span><br><span class="line">vagrant init centos7</span><br><span class="line">vargrant ssh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf ~/software/jdk-8u241-linux-x64.tar.gz -C ~/app/</span><br><span class="line">tar zxvf ~/software/hadoop-2.6.0-cdh5.16.2.tar.gz -C ~/app/</span><br><span class="line">tar zxvf ~/software/hive-1.1.0-cdh5.16.2.tar.gz -C ~/app/</span><br><span class="line"></span><br><span class="line">### 配置ssh</span><br><span class="line">ssh-keygen</span><br><span class="line">cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br><span class="line">### 配置 ~/.bash_profile</span><br><span class="line">#### java环境变量</span><br><span class="line">export JAVA_HOME=~/app/jdk1.8.0_241</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line"></span><br><span class="line">### 验证</span><br><span class="line">java -version</span><br><span class="line"></span><br><span class="line">### haddop环境变量</span><br><span class="line">export HADOOP_HOME=~/app/hadoop-2.6.0-cdh5.16.2</span><br><span class="line">export PATH=$HADOOP_HOME/bin:$PATH</span><br><span class="line"></span><br><span class="line">### 配置 etc/hadoop/hadoop-env.sh</span><br><span class="line">export JAVA_HOME=~/app/jdk1.8.0_241</span><br><span class="line"></span><br><span class="line">### 配置 etc/hadoop/core-site.xml:</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;fs.defaultFS&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;hdfs://hadoop001:8020&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;/home/vagrant/app/tmp&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br><span class="line"></span><br><span class="line">### 配置 etc/hadoop/hdfs-site.xml:</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;1&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br><span class="line"></span><br><span class="line">### 第一个格式化tmp</span><br><span class="line">hdfs namenode -format</span><br><span class="line"></span><br><span class="line">### 启动服务</span><br><span class="line">sbin/start-dfs.sh </span><br><span class="line"></span><br><span class="line">### 查看服务</span><br><span class="line">jps</span><br><span class="line"></span><br><span class="line">### 查看运行状态</span><br><span class="line">http://localhost:50070/</span><br><span class="line"></span><br><span class="line">### hadoop 常用命令</span><br><span class="line">hadoopfs -ls /</span><br><span class="line">hadoopfs -put</span><br><span class="line">hadoopfs -copyFromLocal</span><br><span class="line">hadoopfs -moveFromLocal</span><br><span class="line">hadoopfs -cat</span><br><span class="line">hadoopfs -text</span><br><span class="line">hadoopfs -get</span><br><span class="line">hadoopfs -mkdir</span><br><span class="line">hadoopfs -mv</span><br><span class="line">hadoopfs -getmerge</span><br><span class="line">hadoopfs -rm</span><br><span class="line">hadoopfs -rmdir</span><br><span class="line">hadoopfs -rm -r</span><br></pre></td></tr></table></figure>
+<h3 id="推送数据到hdfs"><a href="#推送数据到hdfs" class="headerlink" title="推送数据到hdfs"></a>推送数据到hdfs</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hadoop fs -mkdir -p /wordcount/input</span><br><span class="line">hadoop fs -put data/test.txt /wordcount/input</span><br></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/cd3358e6.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小敏-mingo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/cd3358e6.html" itemprop="url">Hecker-小米8安装twrp及刷入magisk xposed</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-10T11:49:57+08:00">
+                2019-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/cd3358e6.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/cd3358e6.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/cd3358e6.html" class="leancloud_visitors" data-flag-title="Hecker-小米8安装twrp及刷入magisk xposed">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><ol>
+<li><p>开发版 + root</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 卡刷 miui 开发版</span><br><span class="line">2. 进入安全中心开启 root 权限</span><br><span class="line">3. 解锁 system 分区</span><br><span class="line"></span><br><span class="line">adb root</span><br><span class="line">adb disable-verity</span><br><span class="line">adb reboot</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 twrp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 下载 recovery TWRP 包</span><br><span class="line">https://twrp.me/lg/lgnexus5.html</span><br><span class="line"></span><br><span class="line"># 进入 bootloader 模式</span><br><span class="line">adb reboot bootloader</span><br><span class="line"></span><br><span class="line"># 解锁 - 小米手机需要官方申请解锁</span><br><span class="line">fastboot oem unlock</span><br><span class="line"></span><br><span class="line"># 刷入刚下载的 TWRP 包</span><br><span class="line">fastboot devices</span><br><span class="line">fastboot flash recovery twrp.img</span><br><span class="line"># 小米手机不要直接重启，会被原厂覆盖，可直接进入recovery模式 关机键+音量加</span><br><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载google ota</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 下载 - google ota 不想刷 ota 可跳过</span><br><span class="line">https://developers.google.com/android/images</span><br><span class="line">Factory Images(线刷包)</span><br><span class="line">Full OTA Images(卡刷包)</span><br><span class="line"></span><br><span class="line"># 将 nexus 5 Full OTA Images 放入 sd 卡 - google ota 不想刷 ota 可跳过</span><br><span class="line">adb push ./hammerhead-m4b30x-factory-10cfaa5c.zip /sdcard/downloaded_rom</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>卡刷 magisk 安装 xposed</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 进入 recovery 模式刷入卡刷包</span><br><span class="line">adb reboot recovery</span><br><span class="line"></span><br><span class="line"># 推送 Magisk.zip Magisk-uninstaller.zip </span><br><span class="line">adb push ./Magisk.zip /sdcard/downloaded_rom</span><br><span class="line"># TWRP 安装 zip</span><br><span class="line"></span><br><span class="line"># 安装 MagiskManager.apk </span><br><span class="line">adb reboot</span><br><span class="line">adb install MagiskManager.apk</span><br><span class="line"></span><br><span class="line"># 安装 Magisk Riru-Core Riru-EdXposed 模块</span><br><span class="line"></span><br><span class="line"># 安装 EdXposedManager.apk</span><br><span class="line">adb install EdXposedManager.apk</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/3dc42c14.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小敏-mingo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/3dc42c14.html" itemprop="url">运维-Centos7 ulimit 设置</a></h1>
         
 
         <div class="post-meta">
@@ -309,8 +654,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T14:06:09+08:00">
-                2019-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-22T15:29:47+08:00">
+                2019-08-22
               </time>
             
 
@@ -331,7 +676,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/" itemprop="url" rel="index">
                     <span itemprop="name">IT</span>
                   </a>
@@ -342,7 +687,7 @@
                   ， 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/运维/" itemprop="url" rel="index">
                     <span itemprop="name">运维</span>
                   </a>
@@ -361,8 +706,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/d9de7c8f.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/d9de7c8f.html" itemprop="commentCount"></span>
+                <a href="/posts/3dc42c14.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/3dc42c14.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -370,7 +715,7 @@
 
           
           
-             <span id="/posts/d9de7c8f.html" class="leancloud_visitors" data-flag-title="运维-centos7 升级内核-开启 bbr 加速">
+             <span id="/posts/3dc42c14.html" class="leancloud_visitors" data-flag-title="运维-Centos7 ulimit 设置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -402,10 +747,10 @@
 
       
         
-          <p>BBR是来自于Google的黑科技，目的是通过优化和控制TCP的拥塞，充分利用带宽并降低延迟，起到神奇般的加速效果。<br>
+          <p>ulimit -n是设置当前shell的当前用户所有进程能打开的最大文件数量<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/posts/d9de7c8f.html#more" rel="contents">
+            <a class="btn" href="/posts/3dc42c14.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -453,20 +798,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/50558796.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/530882a0.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小敏的博客">
     </span>
 
@@ -477,7 +822,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/50558796.html" itemprop="url">诗歌-我亦好歌亦好酒</a></h1>
+                <a class="post-title-link" href="/posts/530882a0.html" itemprop="url">运维-nodejs安装</a></h1>
         
 
         <div class="post-meta">
@@ -494,8 +839,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-21T10:44:24+08:00">
-                2019-05-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-07T11:24:49+08:00">
+                2019-08-07
               </time>
             
 
@@ -505,39 +850,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/文学/" itemprop="url" rel="index">
-                    <span itemprop="name">文学</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/文学/诗歌/" itemprop="url" rel="index">
-                    <span itemprop="name">诗歌</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -546,8 +858,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/50558796.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/50558796.html" itemprop="commentCount"></span>
+                <a href="/posts/530882a0.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/530882a0.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -555,7 +867,7 @@
 
           
           
-             <span id="/posts/50558796.html" class="leancloud_visitors" data-flag-title="诗歌-我亦好歌亦好酒">
+             <span id="/posts/530882a0.html" class="leancloud_visitors" data-flag-title="运维-nodejs安装">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -588,7 +900,8 @@
       
         
           
-            <p>我亦好歌亦好酒<br>殊同<br>我亦好歌亦好酒，唱与佳人饮与友。<br>歌宜关西铜绰板，酒当直进十八斗。<br>摇摆长街笑流云，我本长安羁旅人。<br>丛楼参差迷归路，行者匆匆谁与群。<br>幸有作文与谈诗，寥落情怀有君知。<br>负气登楼狂步韵，每被游人笑双痴。<br>幸有浩然共蹴鞠，轻拨慢扣自欢娱。<br>七月流火无眠夜，同向荧屏做唏嘘。<br>幸有彩云喜香山，兰裳桂冠共游仙，<br>说来红尘多趣事，笑声惊动九重天。<br>幸有晓艳能操琴，玉葱手指石榴裙。<br>止如高山流如水，流水溯洄桃花林。<br>红衣佳人白衣友，朝与同歌暮同酒。<br>世人谓我恋长安，其实只恋长安某。</p>
+            <h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p><a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v10.16.2/node-v10.16.2-linux-x64.tar.xz</span><br></pre></td></tr></table></figure></p>
+<h3 id="解压-安装"><a href="#解压-安装" class="headerlink" title="解压/安装"></a>解压/安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf node-v10.16.2-linux-x64.tar.xz</span><br><span class="line"></span><br><span class="line">mv node-v10.16.2-linux-x64 nodejs</span><br><span class="line"></span><br><span class="line">ln -s /opt/nodejs/bin/npm /usr/local/bin/</span><br><span class="line">ln -s /opt/nodejs/bin/node /usr/local/bin/</span><br><span class="line"></span><br><span class="line">node -v</span><br></pre></td></tr></table></figure>
 
           
         
@@ -634,20 +947,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/72ed4008.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/1cdd16d9.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小敏的博客">
     </span>
 
@@ -658,7 +971,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/72ed4008.html" itemprop="url">运维-日志总管 logrotate</a></h1>
+                <a class="post-title-link" href="/posts/1cdd16d9.html" itemprop="url">运维-MongoDB安装</a></h1>
         
 
         <div class="post-meta">
@@ -675,8 +988,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-25T16:30:24+08:00">
-                2019-04-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-07T11:20:40+08:00">
+                2019-08-07
               </time>
             
 
@@ -694,8 +1007,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/72ed4008.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/72ed4008.html" itemprop="commentCount"></span>
+                <a href="/posts/1cdd16d9.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/1cdd16d9.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -703,7 +1016,7 @@
 
           
           
-             <span id="/posts/72ed4008.html" class="leancloud_visitors" data-flag-title="运维-日志总管 logrotate">
+             <span id="/posts/1cdd16d9.html" class="leancloud_visitors" data-flag-title="运维-MongoDB安装">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -735,488 +1048,10 @@
 
       
         
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/26d27558.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小敏的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/26d27558.html" itemprop="url">运维-rap 2 安装</a></h1>
-        
-
-        <div class="post-meta">
-
-
-          
-          
-
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T14:36:24+08:00">
-                2019-04-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/26d27558.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/26d27558.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/posts/26d27558.html" class="leancloud_visitors" data-flag-title="运维-rap 2 安装">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><h3 id="rap2-delos-安装配置"><a href="#rap2-delos-安装配置" class="headerlink" title="rap2-delos 安装配置"></a>rap2-delos 安装配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># 下载rap2后端数据API服务器代码</span><br><span class="line">git clone https://github.com/thx/rap2-delos.git</span><br><span class="line"></span><br><span class="line"># 初始化</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"># 安装全局组件</span><br><span class="line">npm install pm2 -g</span><br><span class="line">npm install typescript -g</span><br><span class="line"></span><br><span class="line"># 添加 pm2 系统命令</span><br><span class="line">ln -s /path/nodejs/bin/pm2 /usr/local/bin/</span><br><span class="line"></span><br><span class="line"># 修改配置文件</span><br><span class="line">&gt; 生产模式下配置文件地址 src/config/config.prod.ts</span><br><span class="line">&gt; 修改端口、数据库连接</span><br><span class="line"></span><br><span class="line"># 编译</span><br><span class="line">npm run build</span><br><span class="line"></span><br><span class="line"># 创建表</span><br><span class="line">npm run create-db</span><br><span class="line"></span><br><span class="line"># 启动服务</span><br><span class="line">npm start</span><br><span class="line"></span><br><span class="line"># 查看 pm2 服务 并 保存开机启动</span><br><span class="line">pm2 list</span><br><span class="line">pm2 save</span><br><span class="line">pm2 startup</span><br><span class="line"></span><br><span class="line"># 设置nginx反向代理</span><br></pre></td></tr></table></figure>
-<h3 id="rap2-dolores-安装配置"><a href="#rap2-dolores-安装配置" class="headerlink" title="rap2-dolores 安装配置"></a>rap2-dolores 安装配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 下载rap2前端静态资源代码</span><br><span class="line">git clone https://github.com/thx/rap2-dolores.git</span><br><span class="line"></span><br><span class="line"># 初始化</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"># 如果初始化失败 --unsafe-perm 解锁安全模式</span><br><span class="line">npm install --unsafe-perm=true --allow-root</span><br><span class="line"></span><br><span class="line"># 修改配置文件</span><br><span class="line">&gt; 生产模式下配置文件地址 src/config/config.prod.js</span><br><span class="line"></span><br><span class="line"># 编译</span><br><span class="line">npm run build</span><br><span class="line"></span><br><span class="line"># 启动服务</span><br><span class="line"># npm start</span><br><span class="line"></span><br><span class="line"># 设置nginx服务，指向/path/rap2-dolores/build</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/da684dcd.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小敏的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/da684dcd.html" itemprop="url">运维-Supervisor 安装配置</a></h1>
-        
-
-        <div class="post-meta">
-
-
-          
-          
-
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T10:55:13+08:00">
-                2019-04-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/da684dcd.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/da684dcd.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/posts/da684dcd.html" class="leancloud_visitors" data-flag-title="运维-Supervisor 安装配置">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install supervisor</span><br><span class="line">yum status supervisor</span><br><span class="line">yum enable supervisor</span><br></pre></td></tr></table></figure>
-<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#</span><br></pre></td></tr></table></figure>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>新增 /etc/supervisord.d/laravel-worker.ini<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[program:laravel-worker]</span><br><span class="line">process_name=%(program_name)s_%(process_num)02d</span><br><span class="line">command=php /path/artisan queue:work database --queue=all_comment</span><br><span class="line">autostart=true</span><br><span class="line">autorestart=true</span><br><span class="line">user=forge</span><br><span class="line">numprocs=8</span><br><span class="line">redirect_stderr=true</span><br><span class="line">stdout_logfile=/var/www/zhenyouhaofang/storage/logs/worker.log</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/1363d69a.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小敏的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/1363d69a.html" itemprop="url">运维-Jeknins安装</a></h1>
-        
-
-        <div class="post-meta">
-
-
-          
-          
-
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-22T20:53:06+08:00">
-                2019-04-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/IT/" itemprop="url" rel="index">
-                    <span itemprop="name">IT</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/IT/运维/" itemprop="url" rel="index">
-                    <span itemprop="name">运维</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/1363d69a.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/1363d69a.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/posts/1363d69a.html" class="leancloud_visitors" data-flag-title="运维-Jeknins安装">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Jenkins是一款由Java编写的开源的持续集成工具。<br>
+          <p>MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。<br>MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/posts/1363d69a.html#more" rel="contents">
+            <a class="btn" href="/posts/1cdd16d9.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1264,20 +1099,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/4fd9a168.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/2da8ff6.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小敏的博客">
     </span>
 
@@ -1288,19 +1123,13 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/4fd9a168.html" itemprop="url">运维-SSL 证书安装 certbot-auto</a></h1>
+                <a class="post-title-link" href="/posts/2da8ff6.html" itemprop="url">运维-接口管理服务YApi</a></h1>
         
 
         <div class="post-meta">
 
 
           
-          
-            <span class="post-author">
-              <span class="post-meta-item-text">作者&#58;</span>
-              小敏-blog
-            </span>
-            <span class="post-meta-divider">|</span>
           
 
           <span class="post-time">
@@ -1311,8 +1140,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-09T16:31:07+08:00">
-                2019-04-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-07T10:59:21+08:00">
+                2019-08-07
               </time>
             
 
@@ -1322,39 +1151,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/IT/" itemprop="url" rel="index">
-                    <span itemprop="name">IT</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/IT/运维/" itemprop="url" rel="index">
-                    <span itemprop="name">运维</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1363,8 +1159,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/4fd9a168.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/4fd9a168.html" itemprop="commentCount"></span>
+                <a href="/posts/2da8ff6.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/2da8ff6.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1372,7 +1168,7 @@
 
           
           
-             <span id="/posts/4fd9a168.html" class="leancloud_visitors" data-flag-title="运维-SSL 证书安装 certbot-auto">
+             <span id="/posts/2da8ff6.html" class="leancloud_visitors" data-flag-title="运维-接口管理服务YApi">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1404,10 +1200,10 @@
 
       
         
-          <p>certbot是专门为Let’s encrypt制作的一个管理证书工具，可以通过它来生成证书管理更新Let’s encrypt证书。<br>
+          <p>优雅的接口管理服务<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/posts/4fd9a168.html#more" rel="contents">
+            <a class="btn" href="/posts/2da8ff6.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1455,20 +1251,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/606f56d1.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/961bd7c3.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小敏的博客">
     </span>
 
@@ -1479,19 +1275,13 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/606f56d1.html" itemprop="url">运维-MariaDB 数据库安装</a></h1>
+                <a class="post-title-link" href="/posts/961bd7c3.html" itemprop="url">技术-微信小程序反编译</a></h1>
         
 
         <div class="post-meta">
 
 
           
-          
-            <span class="post-author">
-              <span class="post-meta-item-text">作者&#58;</span>
-              小敏-blog
-            </span>
-            <span class="post-meta-divider">|</span>
           
 
           <span class="post-time">
@@ -1502,8 +1292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-09T14:46:38+08:00">
-                2019-04-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-03T11:28:23+08:00">
+                2019-07-03
               </time>
             
 
@@ -1524,7 +1314,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/" itemprop="url" rel="index">
                     <span itemprop="name">IT</span>
                   </a>
@@ -1535,9 +1325,9 @@
                   ， 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/IT/运维/" itemprop="url" rel="index">
-                    <span itemprop="name">运维</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
                   </a>
                 </span>
 
@@ -1554,8 +1344,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/606f56d1.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/606f56d1.html" itemprop="commentCount"></span>
+                <a href="/posts/961bd7c3.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/961bd7c3.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1563,7 +1353,7 @@
 
           
           
-             <span id="/posts/606f56d1.html" class="leancloud_visitors" data-flag-title="运维-MariaDB 数据库安装">
+             <span id="/posts/961bd7c3.html" class="leancloud_visitors" data-flag-title="技术-微信小程序反编译">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1595,10 +1385,10 @@
 
       
         
-          <p>MariaDB是MySQL关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在GNU GPL下开源。<br>
+          <p>反编译不是让各位开发者去对一个应用破解搞重装什么的，主要目的是为了促进开发者学习，借鉴好的代码，提升自我开发水平。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/posts/606f56d1.html#more" rel="contents">
+            <a class="btn" href="/posts/961bd7c3.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1646,20 +1436,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/394337ad.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/7c0ed167.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小敏的博客">
     </span>
 
@@ -1670,7 +1460,192 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/394337ad.html" itemprop="url">运维-自助 Git 服务 Gogs 安装</a></h1>
+                <a class="post-title-link" href="/posts/7c0ed167.html" itemprop="url">技术-Android反编译</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-30T12:10:29+08:00">
+                2019-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/" itemprop="url" rel="index">
+                    <span itemprop="name">IT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/7c0ed167.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/7c0ed167.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/7c0ed167.html" class="leancloud_visitors" data-flag-title="技术-Android反编译">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>反编译不是让各位开发者去对一个应用破解搞重装什么的，主要目的是为了促进开发者学习，借鉴好的代码，提升自我开发水平。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/7c0ed167.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/c067e142.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小敏-mingo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/c067e142.html" itemprop="url">运维-Android 网络抓包教程 Charles</a></h1>
         
 
         <div class="post-meta">
@@ -1693,8 +1668,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T15:04:17+08:00">
-                2019-04-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-25T14:43:42+08:00">
+                2019-06-25
               </time>
             
 
@@ -1715,7 +1690,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/" itemprop="url" rel="index">
                     <span itemprop="name">IT</span>
                   </a>
@@ -1726,7 +1701,7 @@
                   ， 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/运维/" itemprop="url" rel="index">
                     <span itemprop="name">运维</span>
                   </a>
@@ -1745,8 +1720,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/394337ad.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/394337ad.html" itemprop="commentCount"></span>
+                <a href="/posts/c067e142.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/c067e142.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1754,7 +1729,7 @@
 
           
           
-             <span id="/posts/394337ad.html" class="leancloud_visitors" data-flag-title="运维-自助 Git 服务 Gogs 安装">
+             <span id="/posts/c067e142.html" class="leancloud_visitors" data-flag-title="运维-Android 网络抓包教程 Charles">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1786,10 +1761,10 @@
 
       
         
-          <p>一款极易搭建的自助 Git 服务。<br>
+          <p>是一个HTTP代理服务器,HTTP监视器,反转代理服务器，当浏览器连接Charles的代理访问互联网时，Charles可以监控浏览器发送和接收的所有数据。它允许一个开发者查看所有连接互联网的HTTP通信，这些包括request, response和HTTP headers （包含cookies与caching信息）。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/posts/394337ad.html#more" rel="contents">
+            <a class="btn" href="/posts/c067e142.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1837,20 +1812,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/6957e190.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/8fb54a41.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小敏的博客">
     </span>
 
@@ -1861,7 +1836,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/6957e190.html" itemprop="url">运维-Api文档管理 ShowDoc 安装</a></h1>
+                <a class="post-title-link" href="/posts/8fb54a41.html" itemprop="url">PHP-异步网络通信引擎swoole安装</a></h1>
         
 
         <div class="post-meta">
@@ -1884,8 +1859,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T11:23:39+08:00">
-                2019-04-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-24T14:02:01+08:00">
+                2019-06-24
               </time>
             
 
@@ -1906,7 +1881,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/" itemprop="url" rel="index">
                     <span itemprop="name">IT</span>
                   </a>
@@ -1917,9 +1892,9 @@
                   ， 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/IT/运维/" itemprop="url" rel="index">
-                    <span itemprop="name">运维</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
                   </a>
                 </span>
 
@@ -1936,8 +1911,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/6957e190.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/6957e190.html" itemprop="commentCount"></span>
+                <a href="/posts/8fb54a41.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/8fb54a41.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1945,7 +1920,7 @@
 
           
           
-             <span id="/posts/6957e190.html" class="leancloud_visitors" data-flag-title="运维-Api文档管理 ShowDoc 安装">
+             <span id="/posts/8fb54a41.html" class="leancloud_visitors" data-flag-title="PHP-异步网络通信引擎swoole安装">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1977,10 +1952,10 @@
 
       
         
-          <p>ShowDoc就是一个非常适合IT团队的在线文档分享工具，它可以加快团队之间沟通的效率。<br>
+          <p>Swoole：面向生产环境的 PHP 异步网络通信引擎<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/posts/6957e190.html#more" rel="contents">
+            <a class="btn" href="/posts/8fb54a41.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2023,7 +1998,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2056,7 +2031,7 @@
 
       <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="小敏-mingo">
             
@@ -2071,7 +2046,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2082,7 +2057,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2093,7 +2068,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-count">86</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2184,7 +2159,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

@@ -6,7 +6,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -94,19 +94,10 @@
 <meta property="og:site_name" content="小敏的博客">
 <meta property="og:description" content="云硬盘（Cloud Block Storage，CBS）是一种高可用、高可靠、低成本、可定制化的块存储设备，可以作为云服务器的独立可扩展磁盘使用，为云服务器实例提供高效可靠的存储设备。云硬盘提供数据块级别的持久性存储，通常用作需要频繁更新、细粒度更新的数据（如文件系统、数据库等）的主存储设备，具有高可用、高可靠和高性能的特点。云硬盘采用三副本的分布式机制，将您的数据备份在不同的物理机上，避免单点故">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/201901261708.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/201901261717.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/201901261723.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/201901261753.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/201901271017.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/201901271018.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/201901271040.png-white">
-<meta property="og:image" content="http://blogimg.tuotuu.com/images/posts/201901271100.png-white">
-<meta property="og:updated_time" content="2019-04-04T06:21:37.575Z">
+<meta property="og:updated_time" content="2020-11-02T07:55:15.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="腾讯云-挂载弹性云硬盘">
 <meta name="twitter:description" content="云硬盘（Cloud Block Storage，CBS）是一种高可用、高可靠、低成本、可定制化的块存储设备，可以作为云服务器的独立可扩展磁盘使用，为云服务器实例提供高效可靠的存储设备。云硬盘提供数据块级别的持久性存储，通常用作需要频繁更新、细粒度更新的数据（如文件系统、数据库等）的主存储设备，具有高可用、高可靠和高性能的特点。云硬盘采用三副本的分布式机制，将您的数据备份在不同的物理机上，避免单点故">
-<meta name="twitter:image" content="http://blogimg.tuotuu.com/images/posts/201901261708.png-white">
 
 
 
@@ -154,7 +145,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -164,7 +155,7 @@
   <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -274,20 +265,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/73568afc.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="小敏的博客">
     </span>
 
@@ -341,7 +332,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/" itemprop="url" rel="index">
                     <span itemprop="name">IT</span>
                   </a>
@@ -352,7 +343,7 @@
                   ， 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/IT/运维/" itemprop="url" rel="index">
                     <span itemprop="name">运维</span>
                   </a>
@@ -418,35 +409,27 @@
 <h2 id="挂载云硬盘"><a href="#挂载云硬盘" class="headerlink" title="挂载云硬盘"></a>挂载云硬盘</h2><h3 id="查看硬盘信息"><a href="#查看硬盘信息" class="headerlink" title="查看硬盘信息"></a>查看硬盘信息</h3><blockquote>
 <p>运行 fdisk -l 命令，此时可以看到随云服务器创建的非弹性云硬盘 vda 和刚刚挂载的弹性云盘 vdb</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901261708.png-white" alt=""></p>
 <h3 id="查看弹性云盘与设备名的对应关系"><a href="#查看弹性云盘与设备名的对应关系" class="headerlink" title="查看弹性云盘与设备名的对应关系"></a>查看弹性云盘与设备名的对应关系</h3><blockquote>
 <p>执行 ls -l /dev/disk/by-id/ 命令，<br>可以在此处看到弹性云盘与设备名的对应关系。注意：非弹性云盘目前不会在这里显示任何信息</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901261717.png-white" alt=""></p>
 <h3 id="列出特殊信息，例如文件系统类型。"><a href="#列出特殊信息，例如文件系统类型。" class="headerlink" title="列出特殊信息，例如文件系统类型。"></a>列出特殊信息，例如文件系统类型。</h3><blockquote>
 <p>执行 file -s device 命令<br>命令的输出仅显示该设备的 data，则说明设备上没有文件系统，您需要创建一个文件系统。<br>如果在包含文件系统的设备上运行此命令，则输出将有所不同，若返回形如 Linux rev 1.0 ext4 filesystem data的输出则说明此硬盘上已经创建了文件系统。</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901261723.png-white" alt=""></p>
 <h3 id="对磁盘进行分区操作（可选）"><a href="#对磁盘进行分区操作（可选）" class="headerlink" title="对磁盘进行分区操作（可选）"></a>对磁盘进行分区操作（可选）</h3><blockquote>
 <p>执行 fdisk /dev/vdb 命令<br>依次输入“n”(新建分区)、“p”(新建主分区)、“1”(使用第1个主分区)，两次回车(使用默认配置)，输入“wq”(保存分区表)，回车开始分区</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901261753.png-white" alt=""></p>
 <blockquote>
 <p>使用“fdisk -l”命令，即可查看到，新的分区 vdb1 已经创建完成</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901271017.png-white" alt=""></p>
 <h3 id="硬盘格式化"><a href="#硬盘格式化" class="headerlink" title="硬盘格式化"></a>硬盘格式化</h3><blockquote>
 <p>执行 mkfs.ext4 device_name 格式化并删除现有数据</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901271018.png-white" alt=""></p>
 <h3 id="挂载新分区"><a href="#挂载新分区" class="headerlink" title="挂载新分区"></a>挂载新分区</h3><blockquote>
 <p>执行 mkdir /data/part1 -p 创建挂载点<br>执行 mount /dev/vdb1 /data/part1 将 vdb1挂载到 /data/part1 处<br>执行 lsblk -f 命令查询文件系统UUID和挂载点信息<br>执行  df -h 命令查看查看到数据盘</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901271040.png-white" alt=""></p>
 <h3 id="自动挂载新分区（开机自动挂载数据盘）"><a href="#自动挂载新分区（开机自动挂载数据盘）" class="headerlink" title="自动挂载新分区（开机自动挂载数据盘）"></a>自动挂载新分区（开机自动挂载数据盘）</h3><blockquote>
 <p>执行 mkdir /data/part1 -p 创建挂载点<br>执行 echo ‘/dev/vdb1 /data/part1 ext4 defaults 0 0’ &gt;&gt; /etc/fstab 命令添加分区信息<br>运行 cat /etc/fstab 命令查看<br>运行 mount -a 命令，如果运行通过则说明文件正常，刚刚创建的文件系统会在下次启动时自动安装</p>
 </blockquote>
-<p>  <img src="http://blogimg.tuotuu.com/images/posts/201901271100.png-white" alt=""></p>
 
       
     </div>
@@ -513,10 +496,6 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/posts/4a17b156.html" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
             
           </div>
 
@@ -593,7 +572,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="小敏-mingo">
             
@@ -608,7 +587,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -619,7 +598,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -630,7 +609,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-count">86</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -737,7 +716,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
