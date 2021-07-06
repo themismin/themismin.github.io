@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="小敏的博客">
 <meta property="og:description" content="certbot是专门为Let’s encrypt制作的一个管理证书工具，可以通过它来生成证书管理更新Let’s encrypt证书。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-18T02:39:50.074Z">
+<meta property="og:updated_time" content="2021-07-05T08:51:37.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="运维-SSL 证书安装 certbot-auto">
 <meta name="twitter:description" content="certbot是专门为Let’s encrypt制作的一个管理证书工具，可以通过它来生成证书管理更新Let’s encrypt证书。">
@@ -404,6 +404,23 @@
       
         <p>certbot是专门为Let’s encrypt制作的一个管理证书工具，可以通过它来生成证书管理更新Let’s encrypt证书。<br><a id="more"></a></p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li>Installing snap on CentOS<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release</span><br><span class="line">yum install snapd</span><br><span class="line">systemctl enable --now snapd.socket</span><br><span class="line">ln -s /var/lib/snapd/snap /snap</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">snap install core</span><br><span class="line">snap refresh core</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove certbot</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>Install Certbot</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">snap install --classic certbot</span><br><span class="line">ln -s /snap/bin/certbot /usr/bin/certbot</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Run Certbot</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">certbot certonly --standalone</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Automatic Renewal（nginx服务 80端口）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sh -c &apos;printf &quot;#!/bin/sh\nsystemctl stop nginx\n&quot; &gt; /etc/letsencrypt/renewal-hooks/pre/nginx.sh&apos;</span><br><span class="line">sh -c &apos;printf &quot;#!/bin/sh\nsystemctl start nginx\n&quot; &gt; /etc/letsencrypt/renewal-hooks/post/nginx.sh&apos;</span><br><span class="line">chmod 755 /etc/letsencrypt/renewal-hooks/pre/nginx.sh</span><br><span class="line">chmod 755 /etc/letsencrypt/renewal-hooks/post/nginx.sh</span><br><span class="line"></span><br><span class="line">crontab -e</span><br><span class="line">0 6 1 * * /usr/bin/crontab renew &gt; /dev/null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="安装（已过期）"><a href="#安装（已过期）" class="headerlink" title="安装（已过期）"></a>安装（已过期）</h2><ol>
 <li><p>下载</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://dl.eff.org/certbot-auto</span><br></pre></td></tr></table></figure>
 </li>
@@ -575,7 +592,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">69</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -597,7 +614,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">96</span>
+                  <span class="site-state-item-count">107</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -684,7 +701,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题1"><span class="nav-number">2.</span> <span class="nav-text">问题1</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装（已过期）"><span class="nav-number">2.</span> <span class="nav-text">安装（已过期）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题1"><span class="nav-number">3.</span> <span class="nav-text">问题1</span></a></li></ol></div>
             
 
           </div>

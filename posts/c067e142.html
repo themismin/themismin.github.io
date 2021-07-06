@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="小敏的博客">
 <meta property="og:description" content="是一个HTTP代理服务器,HTTP监视器,反转代理服务器，当浏览器连接Charles的代理访问互联网时，Charles可以监控浏览器发送和接收的所有数据。它允许一个开发者查看所有连接互联网的HTTP通信，这些包括request, response和HTTP headers （包含cookies与caching信息）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-02T06:02:24.432Z">
+<meta property="og:updated_time" content="2021-02-03T03:55:14.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="运维-Android 网络抓包教程 Charles">
 <meta name="twitter:description" content="是一个HTTP代理服务器,HTTP监视器,反转代理服务器，当浏览器连接Charles的代理访问互联网时，Charles可以监控浏览器发送和接收的所有数据。它允许一个开发者查看所有连接互联网的HTTP通信，这些包括request, response和HTTP headers （包含cookies与caching信息）。">
@@ -433,6 +433,12 @@
 <li>在手机上安装下载的证书，打开 设置-&gt;通用-&gt;描述文件-&gt;charles proxy custom root certificate</li>
 <li>信任安装的证书，打开 设置-&gt;通用-&gt;关于本机-&gt;证书信任设置-&gt;找到 charles proxy custom root certificate 然后信任该证书即可.</li>
 </ul>
+<h2 id="Android-10-证书安装"><a href="#Android-10-证书安装" class="headerlink" title="Android 10 证书安装"></a>Android 10 证书安装</h2><ul>
+<li>安装 Magisk Manager 的 Move Certificates 模块</li>
+<li>计算 Hash 值，重命名证书文件</li>
+<li>复制证书至手机系统证书目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /sdcard/Download/xxxxxxxx.0 /system/etc/security/cacerts</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -588,7 +594,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">69</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -610,7 +616,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">96</span>
+                  <span class="site-state-item-count">107</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -697,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mac安装"><span class="nav-number">2.</span> <span class="nav-text">mac安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-证书安装"><span class="nav-number">3.</span> <span class="nav-text">Android 证书安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IOS-证书安装"><span class="nav-number">4.</span> <span class="nav-text">IOS 证书安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mac安装"><span class="nav-number">2.</span> <span class="nav-text">mac安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-证书安装"><span class="nav-number">3.</span> <span class="nav-text">Android 证书安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IOS-证书安装"><span class="nav-number">4.</span> <span class="nav-text">IOS 证书安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-10-证书安装"><span class="nav-number">5.</span> <span class="nav-text">Android 10 证书安装</span></a></li></ol></div>
             
 
           </div>
