@@ -1,6 +1,5 @@
 ---
 title: Hecker-破解基础篇-去LukoolRecorder水印
-date: 2021-09-08 14:54:37
 tags:
   - 破解
   - ResourceHacker
@@ -9,6 +8,8 @@ tags:
 categories:
   - IT
   - Hecker
+abbrlink: f7c227dd
+date: 2021-09-08 14:54:37
 ---
 
 ### ResourceHacker
