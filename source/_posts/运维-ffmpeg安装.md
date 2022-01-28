@@ -23,6 +23,13 @@ sudo apt-get update
 sudo apt-get install ffmpeg
 ```
 
+## centos最新安装
+```
+yum-config-manager --add-repo=https://negativo17.org/repos/epel-multimedia.repo
+yum-config-manager --disable epel-multimedia
+yum install --enablerepo=epel-multimedia ffmpeg ffmpeg-devel
+```
+
 ## centos安装
 ```
 第一步：添加源
