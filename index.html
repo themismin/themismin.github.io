@@ -267,6 +267,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/1b335d6b.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小敏-mingo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/1b335d6b.html" itemprop="url">运维-yum安裝php56, php73, php74, php80多版本共存</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-07-08T13:15:12+08:00">
+                2023-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/1b335d6b.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/1b335d6b.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/1b335d6b.html" class="leancloud_visitors" data-flag-title="运维-yum安裝php56, php73, php74, php80多版本共存">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="yum安裝php56-php73-php74-php80多版本共存"><a href="#yum安裝php56-php73-php74-php80多版本共存" class="headerlink" title="yum安裝php56, php73, php74, php80多版本共存"></a>yum安裝php56, php73, php74, php80多版本共存</h3><p>1.安装epel：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 查看已安装的PHP，查到后rpm -e 卸载</span><br><span class="line">yum list installed | grep php</span><br><span class="line">yum repolist all | grep php </span><br><span class="line">yum install epel-release -y</span><br></pre></td></tr></table></figure></p>
+<p>2.安装REMI源：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh https://mirrors.tuna.tsinghua.edu.cn/remi/enterprise/remi-release-7.rpm</span><br></pre></td></tr></table></figure></p>
+<p>3.查看可以安装的PHP版本：(54-80版本都有)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">yum repolist all | grep php</span><br><span class="line"></span><br><span class="line">// 安裝 php56 版本</span><br><span class="line">yum install php56 php56-php-fpm php56-php-cli php56-php-bcmath php56-php-gd php56-php-json php56-php-mbstring php56-php-mcrypt php56-php-mysqlnd php56-php-opcache php56-php-pdo php56-php-pecl-crypto php56-php-pecl-mcrypt php56-php-soap php56-php-pecl-zip php56-php-process php56-php-pecl-yaf php56-php-xml php56-php-pecl-swoole4 php56-php-ldap php56-php-pear php56-php-xml php56-php-pecl-imagick php56-php-pecl-wddx</span><br><span class="line"></span><br><span class="line">// 安裝 php73 版本</span><br><span class="line">yum install php73 php73-php-fpm php73-php-cli php73-php-bcmath php73-php-gd php73-php-json php73-php-mbstring php73-php-mcrypt php73-php-mysqlnd php73-php-opcache php73-php-pdo php73-php-pecl-crypto php73-php-pecl-mcrypt php73-php-soap php73-php-pecl-zip php73-php-process php73-php-pecl-yaf php73-php-xml php73-php-pecl-swoole4 php73-php-ldap php73-php-pear php73-php-xml php73-php-pecl-imagick php73-php-pecl-wddx</span><br><span class="line"></span><br><span class="line">// 安裝 php74 版本</span><br><span class="line">yum install php74 php74-php-fpm php74-php-cli php74-php-bcmath php74-php-gd php74-php-json php74-php-mbstring php74-php-mcrypt php74-php-mysqlnd php74-php-opcache php74-php-pdo php74-php-pecl-crypto php74-php-pecl-mcrypt php74-php-soap php74-php-pecl-zip php74-php-process php74-php-pecl-yaf php74-php-xml php74-php-pecl-swoole4 php74-php-ldap php74-php-pear php74-php-xml php74-php-pecl-imagick php74-php-pecl-wddx</span><br><span class="line"></span><br><span class="line">// 安裝 php80 版本</span><br><span class="line">yum install php80 php80-php-fpm php80-php-cli php80-php-bcmath php80-php-gd php80-php-json php80-php-mbstring php80-php-mcrypt php80-php-mysqlnd php80-php-opcache php80-php-pdo php80-php-pecl-crypto php80-php-pecl-mcrypt php80-php-soap php80-php-pecl-zip php80-php-process php80-php-pecl-yaf php80-php-xml php80-php-pecl-swoole4 php80-php-ldap php80-php-pear php80-php-xml php80-php-pecl-imagick php80-php-pecl-wddx</span><br><span class="line"></span><br><span class="line">// 安裝 php81 版本</span><br><span class="line">yum install php81 php81-php-fpm php81-php-cli php81-php-bcmath php81-php-gd php81-php-json php81-php-mbstring php81-php-mcrypt php81-php-mysqlnd php81-php-opcache php81-php-pdo php81-php-pecl-crypto php81-php-pecl-mcrypt php81-php-soap php81-php-pecl-zip php81-php-process php81-php-pecl-yaf php81-php-xml php81-php-pecl-swoole4 php81-php-ldap php81-php-pear php81-php-xml php81-php-pecl-imagick php81-php-pecl-wddx</span><br></pre></td></tr></table></figure></p>
+<p>3-1.卸载PHP版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 卸载安装包</span><br><span class="line">yum remove php56 php56-php-fpm php56-php-cli php56-php-bcmath php56-php-gd php56-php-json php56-php-mbstring php56-php-mcrypt php56-php-mysqlnd php56-php-opcache php56-php-pdo php56-php-pecl-crypto php56-php-pecl-mcrypt php56-php-soap php56-php-pecl-zip php56-php-process php56-php-pecl-yaf php56-php-xml php56-php-pecl-swoole4 php56-php-ldap php56-php-pear php56-php-xml php56-php-pecl-imagick php56-php-pecl-wddx</span><br><span class="line"></span><br><span class="line">// 查看rpm包</span><br><span class="line">rpm -qa|grep php56</span><br><span class="line">// 删除rpm包</span><br><span class="line">rpm -e php56-runtime-5.6-1.el7.remi.x86_64</span><br><span class="line"></span><br><span class="line">ls -al /opt/remi/</span><br><span class="line">ls -al /etc/opt/remi/</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>启动服务<br>安裝好之後爲了PHP版本能夠共存還需要更改不同的php版本端口</li>
+</ol>
+<p>// 在路徑下能夠找到相應的版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /etc/opt/remi/</span><br></pre></td></tr></table></figure></p>
+<p>// 修改 php.ini 配置<br>vim /etc/opt/remi/php73/php.ini</p>
+<pre><code># 开启整站 zlib 压缩输出
+zlib.output_compression = Off
+# 修改 zlib 压缩比
+zlib.output_compression_level = 5
+# 关闭 PATH_INFO
+cgi.fix_pathinfo = 0
+# 设置时区
+date.timezone = Asia/Shanghai
+</code></pre><p>vim /etc/opt/remi/php74/php.ini</p>
+<pre><code># 开启整站 zlib 压缩输出
+zlib.output_compression = Off
+# 修改 zlib 压缩比
+zlib.output_compression_level = 5
+# 关闭 PATH_INFO
+cgi.fix_pathinfo = 0
+# 设置时区
+date.timezone = Asia/Shanghai
+</code></pre><p>vim /etc/opt/remi/php80/php.ini</p>
+<pre><code># 开启整站 zlib 压缩输出
+zlib.output_compression = Off
+# 修改 zlib 压缩比
+zlib.output_compression_level = 5
+# 关闭 PATH_INFO
+cgi.fix_pathinfo = 0
+# 设置时区
+date.timezone = Asia/Shanghai
+</code></pre><p>vim /etc/opt/remi/php81/php.ini</p>
+<pre><code># 开启整站 zlib 压缩输出
+zlib.output_compression = Off
+# 修改 zlib 压缩比
+zlib.output_compression_level = 5
+# 关闭 PATH_INFO
+cgi.fix_pathinfo = 0
+# 设置时区
+date.timezone = Asia/Shanghai
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 編輯配置文件修改listen端口（端口可自定义）</span><br><span class="line">vim /etc/opt/remi/php73/php-fpm.d/www.conf</span><br><span class="line">    # 监听</span><br><span class="line">    listen = 127.0.0.1:9073</span><br><span class="line">    # 设置进程所属用户及用户组</span><br><span class="line">    user = nginx</span><br><span class="line">    group = nginx</span><br><span class="line">    # 设置 unix socket 权限</span><br><span class="line">    listen.owner = nginx</span><br><span class="line">    listen.group = nginx</span><br><span class="line">    listen.mode = 0660</span><br><span class="line">vim /etc/opt/remi/php74/php-fpm.d/www.conf</span><br><span class="line">    # 监听</span><br><span class="line">    listen = 127.0.0.1:9074</span><br><span class="line">    # 设置进程所属用户及用户组</span><br><span class="line">    user = nginx</span><br><span class="line">    group = nginx</span><br><span class="line">    # 设置 unix socket 权限</span><br><span class="line">    listen.owner = nginx</span><br><span class="line">    listen.group = nginx</span><br><span class="line">    listen.mode = 0660</span><br><span class="line">vim /etc/opt/remi/php80/php-fpm.d/www.conf</span><br><span class="line">    # 监听</span><br><span class="line">    listen = 127.0.0.1:9080</span><br><span class="line">    # 设置进程所属用户及用户组</span><br><span class="line">    user = nginx</span><br><span class="line">    group = nginx</span><br><span class="line">    # 设置 unix socket 权限</span><br><span class="line">    listen.owner = nginx</span><br><span class="line">    listen.group = nginx</span><br><span class="line">    listen.mode = 0660</span><br><span class="line">vim /etc/opt/remi/php81/php-fpm.d/www.conf</span><br><span class="line">    # 监听</span><br><span class="line">    listen = 127.0.0.1:9081</span><br><span class="line">    # 设置进程所属用户及用户组</span><br><span class="line">    user = nginx</span><br><span class="line">    group = nginx</span><br><span class="line">    # 设置 unix socket 权限</span><br><span class="line">    listen.owner = nginx</span><br><span class="line">    listen.group = nginx</span><br><span class="line">    listen.mode = 0660</span><br></pre></td></tr></table></figure>
+<p>// 修改相关文件的所属<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">chown root:nginx /var/opt/remi/php73/lib/php/opcache</span><br><span class="line">chown root:nginx /var/opt/remi/php73/lib/php/session</span><br><span class="line">chown root:nginx /var/opt/remi/php73/lib/php/wsdlcache</span><br><span class="line">chown nginx:root /var/opt/remi/php73/log/php-fpm</span><br><span class="line"></span><br><span class="line">chown root:nginx /var/opt/remi/php74/lib/php/opcache</span><br><span class="line">chown root:nginx /var/opt/remi/php74/lib/php/session</span><br><span class="line">chown root:nginx /var/opt/remi/php74/lib/php/wsdlcache</span><br><span class="line">chown nginx:root /var/opt/remi/php74/log/php-fpm</span><br><span class="line"></span><br><span class="line">chown root:nginx /var/opt/remi/php80/lib/php/opcache</span><br><span class="line">chown root:nginx /var/opt/remi/php80/lib/php/session</span><br><span class="line">chown root:nginx /var/opt/remi/php80/lib/php/wsdlcache</span><br><span class="line">chown nginx:root /var/opt/remi/php80/log/php-fpm</span><br><span class="line"></span><br><span class="line">chown root:nginx /var/opt/remi/php81/lib/php/opcache</span><br><span class="line">chown root:nginx /var/opt/remi/php81/lib/php/session</span><br><span class="line">chown root:nginx /var/opt/remi/php81/lib/php/wsdlcache</span><br><span class="line">chown nginx:root /var/opt/remi/php81/log/php-fpm</span><br></pre></td></tr></table></figure></p>
+<p>// 启动服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart php73-php-fpm</span><br><span class="line">systemctl enable php73-php-fpm</span><br><span class="line"></span><br><span class="line">systemctl restart php74-php-fpm</span><br><span class="line">systemctl enable php74-php-fpm</span><br><span class="line"></span><br><span class="line">systemctl restart php80-php-fpm</span><br><span class="line">systemctl enable php80-php-fpm</span><br><span class="line"></span><br><span class="line">systemctl restart php81-php-fpm</span><br><span class="line">systemctl enable php81-php-fpm</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/e42e6a7a.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1808,185 +2002,6 @@
 
       
     
-      
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/642b2dd1.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小敏的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/642b2dd1.html" itemprop="url">MAC-关闭自动更新</a></h1>
-        
-
-        <div class="post-meta">
-
-
-          
-          
-
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-28T13:37:59+08:00">
-                2021-09-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MAC/" itemprop="url" rel="index">
-                    <span itemprop="name">MAC</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/642b2dd1.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/642b2dd1.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/posts/642b2dd1.html" class="leancloud_visitors" data-flag-title="MAC-关闭自动更新">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>屏蔽网络访问</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 swscan.apple.com</span><br><span class="line">127.0.0.1 swcdn.apple.com</span><br><span class="line">127.0.0.1 swdist.apple.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>临时清除系统更新标记</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.systempreferences AttentionPrefBundleIDs 0</span><br><span class="line">Killall Dock</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改权限(非必需)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /Volumes/Macintosh\ HD</span><br><span class="line">chmod 644 System/Library/PrivateFrameworks/SoftwareUpdate.framework/Versions/A/Resources/SoftwareUpdateNotificationManager.app/Contents/MacOS/SoftwareUpdateNotificationManager</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -2039,7 +2054,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
