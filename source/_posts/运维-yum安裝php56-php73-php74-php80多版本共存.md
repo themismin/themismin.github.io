@@ -108,65 +108,65 @@ vim /etc/opt/remi/php73/php-fpm.d/www.conf
     # 监听
     listen = 127.0.0.1:9073
     # 设置进程所属用户及用户组
-    user = nginx
+    user = themismin
     group = nginx
     # 设置 unix socket 权限
-    listen.owner = nginx
+    listen.owner = themismin
     listen.group = nginx
     listen.mode = 0660
 vim /etc/opt/remi/php74/php-fpm.d/www.conf
     # 监听
     listen = 127.0.0.1:9074
     # 设置进程所属用户及用户组
-    user = nginx
+    user = themismin
     group = nginx
     # 设置 unix socket 权限
-    listen.owner = nginx
+    listen.owner = themismin
     listen.group = nginx
     listen.mode = 0660
 vim /etc/opt/remi/php80/php-fpm.d/www.conf
     # 监听
     listen = 127.0.0.1:9080
     # 设置进程所属用户及用户组
-    user = nginx
+    user = themismin
     group = nginx
     # 设置 unix socket 权限
-    listen.owner = nginx
+    listen.owner = themismin
     listen.group = nginx
     listen.mode = 0660
 vim /etc/opt/remi/php81/php-fpm.d/www.conf
     # 监听
     listen = 127.0.0.1:9081
     # 设置进程所属用户及用户组
-    user = nginx
+    user = themismin
     group = nginx
     # 设置 unix socket 权限
-    listen.owner = nginx
+    listen.owner = themismin
     listen.group = nginx
     listen.mode = 0660
 ```
 
 // 修改相关文件的所属
 ```
-chown root:nginx /var/opt/remi/php73/lib/php/opcache
-chown root:nginx /var/opt/remi/php73/lib/php/session
-chown root:nginx /var/opt/remi/php73/lib/php/wsdlcache
-chown nginx:root /var/opt/remi/php73/log/php-fpm
+chown themismin:nginx /var/opt/remi/php73/lib/php/opcache
+chown themismin:nginx /var/opt/remi/php73/lib/php/session
+chown themismin:nginx /var/opt/remi/php73/lib/php/wsdlcache
+chown themismin:nginx /var/opt/remi/php73/log/php-fpm
 
-chown root:nginx /var/opt/remi/php74/lib/php/opcache
-chown root:nginx /var/opt/remi/php74/lib/php/session
-chown root:nginx /var/opt/remi/php74/lib/php/wsdlcache
-chown nginx:root /var/opt/remi/php74/log/php-fpm
+chown themismin:nginx /var/opt/remi/php74/lib/php/opcache
+chown themismin:nginx /var/opt/remi/php74/lib/php/session
+chown themismin:nginx /var/opt/remi/php74/lib/php/wsdlcache
+chown themismin:nginx /var/opt/remi/php74/log/php-fpm
 
-chown root:nginx /var/opt/remi/php80/lib/php/opcache
-chown root:nginx /var/opt/remi/php80/lib/php/session
-chown root:nginx /var/opt/remi/php80/lib/php/wsdlcache
-chown nginx:root /var/opt/remi/php80/log/php-fpm
+chown themismin:nginx /var/opt/remi/php80/lib/php/opcache
+chown themismin:nginx /var/opt/remi/php80/lib/php/session
+chown themismin:nginx /var/opt/remi/php80/lib/php/wsdlcache
+chown themismin:nginx /var/opt/remi/php80/log/php-fpm
 
-chown root:nginx /var/opt/remi/php81/lib/php/opcache
-chown root:nginx /var/opt/remi/php81/lib/php/session
-chown root:nginx /var/opt/remi/php81/lib/php/wsdlcache
-chown nginx:root /var/opt/remi/php81/log/php-fpm
+chown themismin:nginx /var/opt/remi/php81/lib/php/opcache
+chown themismin:nginx /var/opt/remi/php81/lib/php/session
+chown themismin:nginx /var/opt/remi/php81/lib/php/wsdlcache
+chown themismin:nginx /var/opt/remi/php81/log/php-fpm
 ```
 
 // 启动服务
