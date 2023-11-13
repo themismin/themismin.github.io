@@ -183,3 +183,11 @@ systemctl enable php80-php-fpm
 systemctl restart php81-php-fpm
 systemctl enable php81-php-fpm
 ```
+
+### 升级php版本
+```
+yum-config-manager --disable 'remi-php*'
+yum-config-manager --enable   remi-php80
+yum clean all
+yum install php php-fpm php-cli php-bcmath php-gd php-json php-mbstring php-mcrypt php-mysqlnd php-opcache php-pdo php-pecl-crypto php-pecl-mcrypt php-soap php-pecl-zip php-process php-pecl-yaf php-xml php-pecl-swoole4 php-ldap php-pear php-xml php-pecl-imagick php-pecl-wddx
+```

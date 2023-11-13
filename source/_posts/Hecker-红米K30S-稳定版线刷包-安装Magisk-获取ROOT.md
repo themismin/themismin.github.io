@@ -24,6 +24,8 @@ date: 2021-01-16 18:03:19
 
 ### 获取稳定版线刷包
 
+[卡刷包](https://xiaomirom.com/)
+
 [红米K30S国际稳定版卡刷包 V12.0.9.0.QJDMIXM](https://bigota.d.miui.com/V12.0.9.0.QJDMIXM/miui_APOLLOGlobal_V12.0.9.0.QJDMIXM_5afb52eebd_10.0.zip)
 
 [红米K30S国际稳定版线刷包 V12.0.9.0.QJDMIXM](https://bigota.d.miui.com/V12.0.9.0.QJDMIXM/apollo_global_images_V12.0.9.0.QJDMIXM_20201209.0000.00_10.0_global_8305fec284.tgz)
@@ -64,7 +66,12 @@ date: 2021-01-16 18:03:19
 ### 刷入 magisk_patched.img 文件
 > 我是把 magisk_patched_***.img 文件 重命名成 magisk_patched.img 后再操作的
 
-> 关机状态下 音量- 和 开机键一起按， 进入bootloader模式
+> 关机状态下 音量- 和 开机键一起按， 进入bootloader模式 或 命令行进入
+
+```
+adb reboot bootloader                            -- 进入fastboot模式
+fastboot devices                                 -- 查看设备是否连上
+```
 
 > 输入 `fastboot flash boot magisk_patched.img`
 
