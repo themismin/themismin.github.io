@@ -267,6 +267,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/226071bf.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小敏-mingo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/226071bf.html" itemprop="url">CentOS-Backup-配置服务器</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-02-17T20:29:36+08:00">
+                2024-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/226071bf.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/226071bf.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/226071bf.html" class="leancloud_visitors" data-flag-title="CentOS-Backup-配置服务器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 登录服务器</span></span><br><span class="line">ssh centoshd1</span><br><span class="line">716381</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新</span></span><br><span class="line">yum update</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 vim gcc</span></span><br><span class="line">yum install wget vim gcc yum-utils bzip2 lrzsz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改主机名</span></span><br><span class="line">hostname</span><br><span class="line">hostname centoshd1</span><br><span class="line">vim /etc/hostname</span><br><span class="line">vim /etc/sysconfig/network</span><br><span class="line">vim /etc/hosts</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 SSH 公钥</span></span><br><span class="line">ssh-keygen</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置秘钥登录</span></span><br><span class="line"><span class="built_in">cd</span> .ssh/</span><br><span class="line">touch authorized_keys</span><br><span class="line">vim authorized_keys</span><br><span class="line">chmod 400 ~/.ssh/authorized_keys</span><br><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line">systemctl restart sshd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 firewalld</span></span><br><span class="line">ifconfig</span><br><span class="line">iptables -L</span><br><span class="line">yum install firewalld firewall-config</span><br><span class="line">systemctl start firewalld</span><br><span class="line">systemctl <span class="built_in">enable</span> firewalld.service</span><br><span class="line">systemctl status firewalld</span><br><span class="line">firewall-cmd --state</span><br><span class="line">firewall-cmd --get-active-zones</span><br><span class="line">firewall-cmd --get-zone-of-interface=eth0</span><br><span class="line">firewall-cmd --zone=public --list-all</span><br><span class="line">firewall-cmd --complete-reload</span><br><span class="line">systemctl restart firewalld</span><br><span class="line">firewall-cmd --zone=public --add-port=443/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --list-all</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">firewall-cmd --zone=public --list-all</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置yum</span></span><br><span class="line">wget -q http://rpms.remirepo.net/enterprise/remi-release-7.rpm</span><br><span class="line">wget -q https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</span><br><span class="line">rpm -Uvh remi-release-7.rpm epel-release-latest-7.noarch.rpm</span><br><span class="line">rm -rf epel-release-latest-7.noarch.rpm</span><br><span class="line">rm -rf remi-release-7.rpm</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 nginx</span></span><br><span class="line">yum install nginx</span><br><span class="line">systemctl start nginx</span><br><span class="line">systemctl <span class="built_in">enable</span> nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 php7.1</span></span><br><span class="line">yum-config-manager --<span class="built_in">enable</span> remi-php71</span><br><span class="line">yum install php php-fpm php-mbstring php-xml php-pdo php-mysqlnd php-devel</span><br><span class="line">vim /etc/php.ini</span><br><span class="line">chown root:nginx /var/lib/php/opcache</span><br><span class="line">chown root:nginx /var/lib/php/session</span><br><span class="line">chown root:nginx /var/lib/php/wsdlcache</span><br><span class="line">chown nginx:root /var/<span class="built_in">log</span>/php-fpm</span><br><span class="line">vim /etc/php-fpm.d/www.conf</span><br><span class="line">systemctl start php-fpm</span><br><span class="line">systemctl <span class="built_in">enable</span> php-fpm</span><br><span class="line">php --version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 mariadb</span></span><br><span class="line">yum install mariadb-server mariadb</span><br><span class="line">systemctl start mariadb</span><br><span class="line">mysql_secure_installation</span><br><span class="line">systemctl <span class="built_in">enable</span> mariadb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 git</span></span><br><span class="line">yum install git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 composer</span></span><br><span class="line">curl -sS https://getcomposer.org/installer | php</span><br><span class="line">mv composer.phar /usr/<span class="built_in">local</span>/bin/composer</span><br><span class="line">composer </span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 iftop</span></span><br><span class="line">yum install iftop</span><br><span class="line">iftop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 themismin</span></span><br><span class="line"><span class="comment">## 添加数据库</span></span><br><span class="line">mysql -hlocalhost -uroot -p</span><br><span class="line">CREATE DATABASE themismin;</span><br><span class="line">create user <span class="string">'themismin'</span>@<span class="string">'%'</span> identified by <span class="string">'themismin'</span>;</span><br><span class="line">GRANT ALL PRIVILEGES ON themismin.* TO <span class="string">'themismin'</span>@<span class="string">'%'</span>;</span><br><span class="line">show grants <span class="keyword">for</span> <span class="string">'themismin'</span>@<span class="string">'%'</span>;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">## 添加项目文件</span></span><br><span class="line"><span class="built_in">cd</span> /var/www/</span><br><span class="line">git <span class="built_in">clone</span> git@git.coding.net:ThemisMin/themismin.git</span><br><span class="line"><span class="built_in">cd</span> themismin/htdoc/</span><br><span class="line">composer install -vvv</span><br><span class="line">composer run-script post-root-package-install</span><br><span class="line">composer run-script post-create-project-cmd</span><br><span class="line">composer run-script post-install-cmd</span><br><span class="line">vim .env</span><br><span class="line">composer run-script post-install-cmd</span><br><span class="line">php artisan migrate --seed</span><br><span class="line">php artisan spider:site-init</span><br><span class="line"><span class="comment">## 设置项目用户</span></span><br><span class="line"><span class="built_in">cd</span> /var/www/themismin</span><br><span class="line">useradd -s /sbin/nologin -g nginx themismin</span><br><span class="line">usermod -s /bin/bash themismin</span><br><span class="line">sh release_prod.sh</span><br><span class="line"><span class="comment">## 设置项目任务</span></span><br><span class="line">crontab -u themismin -e</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 friso 分词</span></span><br><span class="line"><span class="built_in">cd</span> /opt/</span><br><span class="line">git <span class="built_in">clone</span> https://git.oschina.net/lionsoul/friso.git</span><br><span class="line"><span class="built_in">cd</span> /opt/friso/src/</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">cp /usr/lib/libfriso.so /usr/lib64/</span><br><span class="line"><span class="comment">## 使用 friso</span></span><br><span class="line">friso -init /opt/friso/friso.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 scws 分词</span></span><br><span class="line"><span class="built_in">cd</span> /opt/</span><br><span class="line">wget http://www.xunsearch.com/scws/down/scws-1.2.3.tar.bz2</span><br><span class="line">tar xvjf scws-1.2.3.tar.bz2</span><br><span class="line"><span class="built_in">cd</span> scws-1.2.3/</span><br><span class="line">./configure --<span class="built_in">enable</span>-namerule --prefix=/usr/<span class="built_in">local</span>/scws</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">/usr/<span class="built_in">local</span>/scws/bin/scws -h</span><br><span class="line"><span class="comment">## 添加词典</span></span><br><span class="line"><span class="built_in">cd</span> /opt/</span><br><span class="line">wget http://www.xunsearch.com/scws/down/scws-dict-chs-utf8.tar.bz2</span><br><span class="line">tar xvjf scws-dict-chs-utf8.tar.bz2</span><br><span class="line">mv dict.utf8.xdb /usr/<span class="built_in">local</span>/scws/etc/</span><br><span class="line"><span class="comment">## 安装 php-scws 扩展</span></span><br><span class="line"><span class="built_in">cd</span> /opt/scws-1.2.3/phpext/</span><br><span class="line">phpize</span><br><span class="line">./configure --<span class="built_in">help</span></span><br><span class="line">./configure --with-scws=/usr/<span class="built_in">local</span>/scws</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"><span class="built_in">cd</span> /etc/php-zts.d/</span><br><span class="line">vim 40-scws.ini</span><br><span class="line">cp 40-scws.ini /etc/php.d/</span><br><span class="line">php -m</span><br><span class="line">systemctl restart php-fpm</span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/ea7188db.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1861,154 +2008,6 @@ date.timezone = Asia/Shanghai
 
       
     
-      
-        
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/51e61c54.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="小敏-mingo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小敏的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/51e61c54.html" itemprop="url">php-Laravel elasticsearch DSL 教程</a></h1>
-        
-
-        <div class="post-meta">
-
-
-          
-          
-
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-24T12:59:04+08:00">
-                2022-03-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/51e61c54.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/51e61c54.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/posts/51e61c54.html" class="leancloud_visitors" data-flag-title="php-Laravel elasticsearch DSL 教程">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Elasticsearch-DSL"><a href="#Elasticsearch-DSL" class="headerlink" title="Elasticsearch DSL"></a>Elasticsearch DSL</h1><p>如何使用 Elasticsearch DSL 的方式执行搜索</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -2061,7 +2060,7 @@ date.timezone = Asia/Shanghai
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2174,7 +2173,7 @@ date.timezone = Asia/Shanghai
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2023</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
