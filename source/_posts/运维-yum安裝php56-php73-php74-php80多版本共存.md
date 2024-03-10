@@ -3,6 +3,8 @@ title: '运维-yum安裝php56, php73, php74, php80多版本共存'
 abbrlink: 1b335d6b
 date: 2023-07-08 13:15:12
 tags:
+  - php
+  - php多版本
 ---
 
 ### yum安裝php56, php73, php74, php80多版本共存
@@ -24,25 +26,25 @@ rpm -ivh https://mirrors.tuna.tsinghua.edu.cn/remi/enterprise/remi-release-7.rpm
 yum repolist all | grep php
 
 // 安裝 php56 版本
-yum install php56 php56-php-fpm php56-php-cli php56-php-bcmath php56-php-gd php56-php-json php56-php-mbstring php56-php-mcrypt php56-php-mysqlnd php56-php-opcache php56-php-pdo php56-php-pecl-crypto php56-php-pecl-mcrypt php56-php-soap php56-php-pecl-zip php56-php-process php56-php-pecl-yaf php56-php-xml php56-php-pecl-swoole4 php56-php-ldap php56-php-pear php56-php-xml php56-php-pecl-imagick php56-php-pecl-wddx
+yum install php56 php56-php-fpm php56-php-cli php56-php-bcmath php56-php-gd php56-php-json php56-php-mbstring php56-php-mcrypt php56-php-mysqlnd php56-php-opcache php56-php-pdo php56-php-pecl-crypto php56-php-pecl-mcrypt php56-php-soap php56-php-pecl-zip php56-php-process php56-php-pecl-yaf php56-php-xml php56-php-pecl-swoole4 php56-php-ldap php56-php-pear php56-php-xml php56-php-pecl-imagick php56-php-pecl-wddx php56-php-intl php56-php-sodium
 
 // 安裝 php73 版本
-yum install php73 php73-php-fpm php73-php-cli php73-php-bcmath php73-php-gd php73-php-json php73-php-mbstring php73-php-mcrypt php73-php-mysqlnd php73-php-opcache php73-php-pdo php73-php-pecl-crypto php73-php-pecl-mcrypt php73-php-soap php73-php-pecl-zip php73-php-process php73-php-pecl-yaf php73-php-xml php73-php-pecl-swoole4 php73-php-ldap php73-php-pear php73-php-xml php73-php-pecl-imagick php73-php-pecl-wddx
+yum install php73 php73-php-fpm php73-php-cli php73-php-bcmath php73-php-gd php73-php-json php73-php-mbstring php73-php-mcrypt php73-php-mysqlnd php73-php-opcache php73-php-pdo php73-php-pecl-crypto php73-php-pecl-mcrypt php73-php-soap php73-php-pecl-zip php73-php-process php73-php-pecl-yaf php73-php-xml php73-php-pecl-swoole4 php73-php-ldap php73-php-pear php73-php-xml php73-php-pecl-imagick php73-php-pecl-wddx php73-php-intl php73-php-sodium
 
 // 安裝 php74 版本
-yum install php74 php74-php-fpm php74-php-cli php74-php-bcmath php74-php-gd php74-php-json php74-php-mbstring php74-php-mcrypt php74-php-mysqlnd php74-php-opcache php74-php-pdo php74-php-pecl-crypto php74-php-pecl-mcrypt php74-php-soap php74-php-pecl-zip php74-php-process php74-php-pecl-yaf php74-php-xml php74-php-pecl-swoole4 php74-php-ldap php74-php-pear php74-php-xml php74-php-pecl-imagick php74-php-pecl-wddx
+yum install php74 php74-php-fpm php74-php-cli php74-php-bcmath php74-php-gd php74-php-json php74-php-mbstring php74-php-mcrypt php74-php-mysqlnd php74-php-opcache php74-php-pdo php74-php-pecl-crypto php74-php-pecl-mcrypt php74-php-soap php74-php-pecl-zip php74-php-process php74-php-pecl-yaf php74-php-xml php74-php-pecl-swoole4 php74-php-ldap php74-php-pear php74-php-xml php74-php-pecl-imagick php74-php-pecl-wddx php74-php-intl php74-php-sodium
 
 // 安裝 php80 版本
-yum install php80 php80-php-fpm php80-php-cli php80-php-bcmath php80-php-gd php80-php-json php80-php-mbstring php80-php-mcrypt php80-php-mysqlnd php80-php-opcache php80-php-pdo php80-php-pecl-crypto php80-php-pecl-mcrypt php80-php-soap php80-php-pecl-zip php80-php-process php80-php-pecl-yaf php80-php-xml php80-php-pecl-swoole4 php80-php-ldap php80-php-pear php80-php-xml php80-php-pecl-imagick php80-php-pecl-wddx
+yum install php80 php80-php-fpm php80-php-cli php80-php-bcmath php80-php-gd php80-php-json php80-php-mbstring php80-php-mcrypt php80-php-mysqlnd php80-php-opcache php80-php-pdo php80-php-pecl-crypto php80-php-pecl-mcrypt php80-php-soap php80-php-pecl-zip php80-php-process php80-php-pecl-yaf php80-php-xml php80-php-pecl-swoole4 php80-php-ldap php80-php-pear php80-php-xml php80-php-pecl-imagick php80-php-pecl-wddx php80-php-intl php80-php-sodium
 
 // 安裝 php81 版本
-yum install php81 php81-php-fpm php81-php-cli php81-php-bcmath php81-php-gd php81-php-json php81-php-mbstring php81-php-mcrypt php81-php-mysqlnd php81-php-opcache php81-php-pdo php81-php-pecl-crypto php81-php-pecl-mcrypt php81-php-soap php81-php-pecl-zip php81-php-process php81-php-pecl-yaf php81-php-xml php81-php-pecl-swoole4 php81-php-ldap php81-php-pear php81-php-xml php81-php-pecl-imagick php81-php-pecl-wddx
+yum install php81 php81-php-fpm php81-php-cli php81-php-bcmath php81-php-gd php81-php-json php81-php-mbstring php81-php-mcrypt php81-php-mysqlnd php81-php-opcache php81-php-pdo php81-php-pecl-crypto php81-php-pecl-mcrypt php81-php-soap php81-php-pecl-zip php81-php-process php81-php-pecl-yaf php81-php-xml php81-php-pecl-swoole4 php81-php-ldap php81-php-pear php81-php-xml php81-php-pecl-imagick php81-php-pecl-wddx php81-php-intl php81-php-sodium
 ```
 
 3-1.卸载PHP版本
 ```
-// 卸载安装包
-yum remove php56 php56-php-fpm php56-php-cli php56-php-bcmath php56-php-gd php56-php-json php56-php-mbstring php56-php-mcrypt php56-php-mysqlnd php56-php-opcache php56-php-pdo php56-php-pecl-crypto php56-php-pecl-mcrypt php56-php-soap php56-php-pecl-zip php56-php-process php56-php-pecl-yaf php56-php-xml php56-php-pecl-swoole4 php56-php-ldap php56-php-pear php56-php-xml php56-php-pecl-imagick php56-php-pecl-wddx
+// 卸载安装包5.6
+yum remove php56 php56-php-fpm php56-php-cli php56-php-bcmath php56-php-gd php56-php-json php56-php-mbstring php56-php-mcrypt php56-php-mysqlnd php56-php-opcache php56-php-pdo php56-php-pecl-crypto php56-php-pecl-mcrypt php56-php-soap php56-php-pecl-zip php56-php-process php56-php-pecl-yaf php56-php-xml php56-php-pecl-swoole4 php56-php-ldap php56-php-pear php56-php-xml php56-php-pecl-imagick php56-php-pecl-wddx php56-php-intl php56-php-sodium
 
 // 查看rpm包
 rpm -qa|grep php56
@@ -189,5 +191,5 @@ systemctl enable php81-php-fpm
 yum-config-manager --disable 'remi-php*'
 yum-config-manager --enable   remi-php80
 yum clean all
-yum install php php-fpm php-cli php-bcmath php-gd php-json php-mbstring php-mcrypt php-mysqlnd php-opcache php-pdo php-pecl-crypto php-pecl-mcrypt php-soap php-pecl-zip php-process php-pecl-yaf php-xml php-pecl-swoole4 php-ldap php-pear php-xml php-pecl-imagick php-pecl-wddx
+yum install php php-fpm php-cli php-bcmath php-gd php-json php-mbstring php-mcrypt php-mysqlnd php-opcache php-pdo php-pecl-crypto php-pecl-mcrypt php-soap php-pecl-zip php-process php-pecl-yaf php-xml php-pecl-swoole4 php-ldap php-pear php-xml php-pecl-imagick php-pecl-wddx php-php-intl php-php-sodium
 ```

@@ -4,6 +4,8 @@ date: '2022-02-08 13:51:52 - PHP - elasticsearch - 搜索 - laravel'
 categories:
   - IT
   - PHP
+tag:
+  - elasticsearch
 abbrlink: a3a2602b
 ---
 ## 安装 elasticsearch

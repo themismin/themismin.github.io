@@ -3,6 +3,7 @@ title: 运维-MariaDB 数据库安装
 author: 小敏-blog
 tags:
   - 数据库安装
+  - Mysql
   - MariaDB
 categories:
   - IT

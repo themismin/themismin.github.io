@@ -3,6 +3,9 @@ title: 运维-Laravel Homestead 开发环境
 abbrlink: 83809c30
 date: 2020-12-21 11:20:55
 tags:
+  - 虚拟机
+  - VBoxManage
+  - homestead
 ---
 Laravel Homestead 实际是一个打包好各种 Laravel 开发所需软件和工具的 Vagrant 盒子（关于 Vagrant 盒子的释义请参考 Vagrant 官方文档），该盒子为我们提供了一个优秀的开发环境，有了它，我们不再需要在本地环境安装 PHP、Composer、Nginx、MySQL、Memcached、Redis、Node 等其它工具软件，我们也完全不用再担心误操作搞乱操作系统 —— 因为 Vagrant 盒子是一次性的，如果出现错误，可以在数分钟内销毁并重新创建该 Vagrant 盒子！
 <!-- more -->
