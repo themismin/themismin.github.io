@@ -88,7 +88,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="小敏的博客">
-<meta property="og:url" content="https://blog.themismin.com/tags/php/index.html">
+<meta property="og:url" content="https://blog.themismin.com/tags/PHP/index.html">
 <meta property="og:site_name" content="小敏的博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.themismin.com/tags/php/">
+  <link rel="canonical" href="https://blog.themismin.com/tags/PHP/">
 
 
 
 
 
-  <title>标签: php | 小敏的博客</title>
+  <title>标签: PHP | 小敏的博客</title>
   
 
 
@@ -258,7 +258,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>php<small>标签</small>
+        <h1>PHP<small>标签</small>
         </h1>
       </div>
 
@@ -270,17 +270,17 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/posts/3a328baf.html" itemprop="url">
+            <a class="post-title-link" href="/posts/5b88765f.html" itemprop="url">
               
-                <span itemprop="name">运维-Homesead php扩展php-mcrypt 安装</span>
+                <span itemprop="name">php-记一次服务器部署问题</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2024-03-10T19:48:15+08:00" content="2024-03-10">
-          03-10
+        <time class="post-time" itemprop="dateCreated" datetime="2022-06-11T11:14:36+08:00" content="2022-06-11">
+          06-11
         </time>
       </div>
 
@@ -296,17 +296,69 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/posts/1b335d6b.html" itemprop="url">
+            <a class="post-title-link" href="/posts/814eda8.html" itemprop="url">
               
-                <span itemprop="name">运维-yum安裝php56, php73, php74, php80多版本共存</span>
+                <span itemprop="name">php-imagick安装教程</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2023-07-08T13:15:12+08:00" content="2023-07-08">
-          07-08
+        <time class="post-time" itemprop="dateCreated" datetime="2022-01-27T11:20:21+08:00" content="2022-01-27">
+          01-27
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/posts/8fb54a41.html" itemprop="url">
+              
+                <span itemprop="name">PHP-异步网络通信引擎swoole安装</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-06-24T14:02:01+08:00" content="2019-06-24">
+          06-24
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/posts/1b7bf0e4.html" itemprop="url">
+              
+                <span itemprop="name">PHP-将Laravel部署到服务器</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-02-20T23:06:59+08:00" content="2019-02-20">
+          02-20
         </time>
       </div>
 
@@ -755,61 +807,6 @@
               }
             });
           } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
-se {
             var newcounter = new Counter();
             /* Set ACL */
             var acl = new AV.ACL();
