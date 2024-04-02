@@ -5,14 +5,15 @@ categories:
   - IT
   - PHP
 tag:
-  - elasticsearch
+  - 搜索引擎
+  - Elasticsearch
 abbrlink: a3a2602b
 ---
-## 安装 elasticsearch
+## centos 安装 elasticsearch
 ```
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
-vim /etc/yum.repos.d/elasticsearch-7.x.repo
+sudo vim /etc/yum.repos.d/elasticsearch-7.x.repo
 ###
 [elasticsearch-7.x]
 name=Elasticsearch repository for  7.x packages
@@ -26,40 +27,45 @@ type=rpm-md
 
 yum install -y elasticsearch
 
-vim /etc/elasticsearch/elasticsearch.yml
-###
-...
-bootstrap.memory_lock: false
-bootstrap.system_call_filter: false
-...
-network.host: 0.0.0.0
-...
-cluster.initial_master_nodes: ["node-1"]
-###
+sudo systemctl restart elasticsearch
+sudo systemctl enable elasticsearch
+```
 
-vim /etc/sysctl.conf
-###
-...
-vm.max_map_count=655360
-###
+## ubuntu 安装
+```
+0. 查看版本
+sudo apt-cache madison elasticsearch
+0. 显示包的版本
+sudo dpkg -s elasticsearch
 
-sysctl -p
+1. 卸载旧软件
+sudo apt-get purge elasticsearch
+sudo apt-get autoremove elasticsearch
+sudo rm -rf /var/lib/elasticsearch/
+sudo rm -rf /etc/elasticsearch/
 
-systemctl start elasticsearch
-systemctl enable elasticsearch
+#2. 安装 7.17.*
+#sudo apt-get install elasticsearch
 
-# 服务是否启动
-curl http://127.0.0.1:9200?pretty
+2. 安装指定版本 7.17.18
+sudo apt install elasticsearch=7.17.18
 
-# 分词
-curl http://127.0.0.1:9200/_analyze --header 'Content-Type: application/json' --data '{"text":"世界如此之大"}'
+3. 加载，开启启动，启动
+sudo systemctl daemon-reload
+sudo systemctl enable elasticsearch.service
+sudo systemctl start elasticsearch.service
 ```
 
 ## ik插件
 ```
-/usr/share/elasticsearch/bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.17.0/elasticsearch-analysis-ik-7.17.0.zip
+1. 对应置顶版本插件
+sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.17.0/elasticsearch-analysis-ik-7.17.0.zip
 
-/usr/share/elasticsearch/bin/elasticsearch-plugin list
+sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install https://github.com/infinilabs/analysis-ik/releases/download/v7.17.18/elasticsearch-analysis-ik-7.17.18.zip
+
+sudo /usr/share/elasticsearch/bin/elasticsearch-plugin list
+
+sudo systemctl restart elasticsearch
 
 # 分词
 curl http://127.0.0.1:9200/_analyze --header 'Content-Type: application/json' --data '{"analyzer":"ik_max_word","text":"世界如此之大"}'
@@ -70,7 +76,47 @@ ik_smart：会做最粗粒度的拆分；已被分出的词语将不会再次被
 
 
 # 热词更新配置
-vim /etc/elasticsearch/analysis-ik/IKAnalyzer.cfg.xml
+sudo vim /etc/elasticsearch/analysis-ik/IKAnalyzer.cfg.xml
+```
+
+## 配置
+```
+sudo vim /etc/elasticsearch/elasticsearch.yml
+###
+...
+bootstrap.memory_lock: false
+bootstrap.system_call_filter: false
+...
+network.host: 0.0.0.0
+...
+cluster.initial_master_nodes: ["node-1"]
+###
+
+sudo vim /etc/sysctl.conf
+###
+...
+vm.max_map_count=655360
+###
+
+sysctl -p
+
+sudo vim /etc/security/limits.conf
+###
+...
+* soft nofile 65535
+* hard nofile 65535
+###
+# 重启服务器
+
+
+sudo systemctl restart elasticsearch
+sudo systemctl enable elasticsearch
+
+# 服务是否启动
+curl http://127.0.0.1:9200?pretty
+
+# 分词
+curl http://127.0.0.1:9200/_analyze --header 'Content-Type: application/json' --data '{"text":"世界如此之大"}'
 ```
 
 ## 命令
