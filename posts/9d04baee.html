@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="小敏的博客">
 <meta property="og:description" content="CentOS（Community Enterprise Operating System，中文意思是社区企业操作系统）是Linux发行版之一，它是来自于Red Hat Enterprise Linux依照开放源代码规定释出的源代码所编译而成。由于出自同样的源代码，因此有些要求高度稳定性的服务器以CentOS替代商业版的Red Hat Enterprise Linux使用。两者的不同，在于CentO">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-23T10:15:14.934Z">
+<meta property="og:updated_time" content="2024-04-03T08:01:16.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS-服务器初始化配置">
 <meta name="twitter:description" content="CentOS（Community Enterprise Operating System，中文意思是社区企业操作系统）是Linux发行版之一，它是来自于Red Hat Enterprise Linux依照开放源代码规定释出的源代码所编译而成。由于出自同样的源代码，因此有些要求高度稳定性的服务器以CentOS替代商业版的Red Hat Enterprise Linux使用。两者的不同，在于CentO">
@@ -420,7 +420,7 @@
 <p>执行 ssh-keygen</p>
 </blockquote>
 <h2 id="配置-SSH-免密码登录"><a href="#配置-SSH-免密码登录" class="headerlink" title="配置 SSH 免密码登录"></a>配置 SSH 免密码登录</h2><blockquote>
-<p>编辑 ~/.ssh/authorized_keys 添加公钥<br>变更文件权限 chmod 600 ~/.ssh/authorized_keys<br>编辑 /etc/ssh/sshd_config 修改配置，禁止密码认证<br>执行 systemctl restart sshd 命令，重启 ssh 服务 </p>
+<p>编辑 ~/.ssh/authorized_keys 添加公钥<br>变更文件权限 chmod 600 ~/.ssh/authorized_keys<br>编辑 /etc/ssh/sshd_config 修改配置，禁止密码认证 PasswordAuthentication no<br>执行 systemctl restart sshd 命令，重启 ssh 服务 </p>
 </blockquote>
 <h2 id="重启服务器"><a href="#重启服务器" class="headerlink" title="重启服务器"></a>重启服务器</h2><blockquote>
 <p>执行 reboot 命令</p>
@@ -588,7 +588,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">93</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -610,7 +610,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">138</span>
+                  <span class="site-state-item-count">139</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
