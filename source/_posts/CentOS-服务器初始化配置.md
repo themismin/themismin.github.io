@@ -46,7 +46,7 @@ yum makecache
 ## 配置 SSH 免密码登录
   > 编辑 ~/.ssh/authorized_keys 添加公钥
   > 变更文件权限 chmod 600 ~/.ssh/authorized_keys
-  > 编辑 /etc/ssh/sshd_config 修改配置，禁止密码认证
+  > 编辑 /etc/ssh/sshd_config 修改配置，禁止密码认证 PasswordAuthentication no
   > 执行 systemctl restart sshd 命令，重启 ssh 服务 
 
 ## 重启服务器
