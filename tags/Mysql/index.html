@@ -88,7 +88,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="小敏的博客">
-<meta property="og:url" content="https://blog.themismin.com/tags/Mysql/index.html">
+<meta property="og:url" content="https://blog.themismin.com/tags/mysql/index.html">
 <meta property="og:site_name" content="小敏的博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.themismin.com/tags/Mysql/">
+  <link rel="canonical" href="https://blog.themismin.com/tags/mysql/">
 
 
 
 
 
-  <title>标签: Mysql | 小敏的博客</title>
+  <title>标签: mysql | 小敏的博客</title>
   
 
 
@@ -258,7 +258,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Mysql<small>标签</small>
+        <h1>mysql<small>标签</small>
         </h1>
       </div>
 
@@ -270,43 +270,17 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/posts/606f56d1.html" itemprop="url">
+            <a class="post-title-link" href="/posts/64ce2134.html" itemprop="url">
               
-                <span itemprop="name">运维-MariaDB 数据库安装</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-09T14:46:38+08:00" content="2019-04-09">
-          04-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/59dda779.html" itemprop="url">
-              
-                <span itemprop="name">Mysql-替换字段中的内容</span>
+                <span itemprop="name">mysql-创建用户并设置只读权限</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-23T10:50:57+08:00" content="2019-02-23">
-          02-23
+        <time class="post-time" itemprop="dateCreated" datetime="2024-04-17T23:34:28+08:00" content="2024-04-17">
+          04-17
         </time>
       </div>
 
@@ -368,7 +342,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">97</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -390,7 +364,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">143</span>
+                  <span class="site-state-item-count">149</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -769,6 +743,47 @@
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+ter.get('time'));
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');
