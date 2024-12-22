@@ -12,8 +12,8 @@ categories:
 ## 安装
 ```
 yum install supervisor
-yum status supervisor
-yum enable supervisor
+systemctl start supervisord
+systemctl status supervisord
 ```
 
 ## 参数
