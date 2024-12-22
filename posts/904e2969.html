@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="12345git branch -a | grep -v -E &amp;apos;remotes|master|v8&amp;apos; | xargs git branch -dgit branch -r | grep -v -E &amp;apos;master|v8&amp;apos; | sed &amp;apos;s/origin\///g&amp;apos;| xargs -I &amp;#123;&amp;#125; git push orig">
+<meta name="description" content="1234567891011121314151617## 删除本地分支 (除了master)git branch -a | grep -v -E &amp;apos;master&amp;apos; | xargs git branch -d## 删除远程分支 (除了master)git branch -r | grep -v -E &amp;apos;master&amp;apos; | sed &amp;apos;s/origin\/">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开发-git删除操作">
 <meta property="og:url" content="https://blog.themismin.com/posts/904e2969.html">
 <meta property="og:site_name" content="小敏的博客">
-<meta property="og:description" content="12345git branch -a | grep -v -E &amp;apos;remotes|master|v8&amp;apos; | xargs git branch -dgit branch -r | grep -v -E &amp;apos;master|v8&amp;apos; | sed &amp;apos;s/origin\///g&amp;apos;| xargs -I &amp;#123;&amp;#125; git push orig">
+<meta property="og:description" content="1234567891011121314151617## 删除本地分支 (除了master)git branch -a | grep -v -E &amp;apos;master&amp;apos; | xargs git branch -d## 删除远程分支 (除了master)git branch -r | grep -v -E &amp;apos;master&amp;apos; | sed &amp;apos;s/origin\/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-09T13:12:23.958Z">
+<meta property="og:updated_time" content="2024-11-12T16:32:07.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发-git删除操作">
-<meta name="twitter:description" content="12345git branch -a | grep -v -E &amp;apos;remotes|master|v8&amp;apos; | xargs git branch -dgit branch -r | grep -v -E &amp;apos;master|v8&amp;apos; | sed &amp;apos;s/origin\///g&amp;apos;| xargs -I &amp;#123;&amp;#125; git push orig">
+<meta name="twitter:description" content="1234567891011121314151617## 删除本地分支 (除了master)git branch -a | grep -v -E &amp;apos;master&amp;apos; | xargs git branch -d## 删除远程分支 (除了master)git branch -r | grep -v -E &amp;apos;master&amp;apos; | sed &amp;apos;s/origin\/">
 
 
 
@@ -363,7 +363,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git branch -a | grep -v -E &apos;remotes|master|v8&apos; | xargs git branch -d</span><br><span class="line">git branch -r | grep -v -E &apos;master|v8&apos; | sed &apos;s/origin\///g&apos;| xargs -I &#123;&#125; git push origin :&#123;&#125;</span><br><span class="line"></span><br><span class="line">git tag | grep -v -E &apos;v8&apos; | xargs -I &#123;&#125; git tag -d &#123;&#125;</span><br><span class="line">git tag | grep -v -E &apos;v8&apos; | xargs -I &#123;&#125; git push origin :refs/tags/&#123;&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">## 删除本地分支 (除了master)</span><br><span class="line">git branch -a | grep -v -E &apos;master&apos; | xargs git branch -d</span><br><span class="line">## 删除远程分支 (除了master)</span><br><span class="line">git branch -r | grep -v -E &apos;master&apos; | sed &apos;s/origin\///g&apos;| xargs -I &#123;&#125; git push origin :&#123;&#125;</span><br><span class="line"></span><br><span class="line">## 查看远程tag查看远程仓库所有标签</span><br><span class="line">git ls-remote --tags origin</span><br><span class="line"></span><br><span class="line">## 删除本地tag</span><br><span class="line">git tag | xargs git tag -d</span><br><span class="line">## 删除本地tag (除了20241212.1)</span><br><span class="line">git tag | grep -v -E &apos;20241212.1&apos; | xargs -I &#123;&#125; git tag -d &#123;&#125;</span><br><span class="line">## 删除远程tag (除了20241212.1)</span><br><span class="line">git tag | grep -v -E &apos;20241212.1&apos; | xargs -I &#123;&#125; git push origin :refs/tags/&#123;&#125;</span><br><span class="line"></span><br><span class="line">## 删除远程分支 (除了master)</span><br><span class="line">git pull -r</span><br></pre></td></tr></table></figure>
       
     </div>
     

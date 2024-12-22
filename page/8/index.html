@@ -873,7 +873,7 @@
       
         
           
-            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install supervisor</span><br><span class="line">yum status supervisor</span><br><span class="line">yum enable supervisor</span><br></pre></td></tr></table></figure>
+            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install supervisor</span><br><span class="line">systemctl start supervisord</span><br><span class="line">systemctl status supervisord</span><br></pre></td></tr></table></figure>
 <h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#</span><br></pre></td></tr></table></figure>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>新增 /etc/supervisord.d/laravel-worker.ini<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[program:laravel-worker]</span><br><span class="line">process_name=%(program_name)s_%(process_num)02d</span><br><span class="line">command=php /path/artisan queue:work database --queue=all_comment</span><br><span class="line">autostart=true</span><br><span class="line">autorestart=true</span><br><span class="line">user=forge</span><br><span class="line">numprocs=8</span><br><span class="line">redirect_stderr=true</span><br><span class="line">stdout_logfile=/var/www/zhenyouhaofang/storage/logs/worker.log</span><br></pre></td></tr></table></figure></p>
 
@@ -1875,7 +1875,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/87988452.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/9db60fc0.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小敏-mingo">
@@ -1894,7 +1894,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/87988452.html" itemprop="url">运维-搜索引擎安装 迅搜</a></h1>
+                <a class="post-title-link" href="/posts/9db60fc0.html" itemprop="url">运维-搜索引擎安装 Elasticsearch</a></h1>
         
 
         <div class="post-meta">
@@ -1969,8 +1969,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/87988452.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/87988452.html" itemprop="commentCount"></span>
+                <a href="/posts/9db60fc0.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/9db60fc0.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1978,7 +1978,7 @@
 
           
           
-             <span id="/posts/87988452.html" class="leancloud_visitors" data-flag-title="运维-搜索引擎安装 迅搜">
+             <span id="/posts/9db60fc0.html" class="leancloud_visitors" data-flag-title="运维-搜索引擎安装 Elasticsearch">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2010,17 +2010,37 @@
 
       
         
-          <p>开源免费、高性能、多功能<br>简单易用的专业全文检索技术方案<br>帮助一般开发者针对既有的海量数据，快速而方便地建立自己的全文搜索引擎。全文检索可以帮助您降低服务器搜索负荷、极大程度的提高搜索速度和用户体验<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/87988452.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="将-Elasticsearch-公共-GPG-密钥导入-rpm"><a href="#将-Elasticsearch-公共-GPG-密钥导入-rpm" class="headerlink" title="将 Elasticsearch 公共 GPG 密钥导入 rpm"></a>将 Elasticsearch 公共 GPG 密钥导入 rpm</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch</span><br></pre></td></tr></table></figure>
+<h3 id="新增-etc-yum-repos-d-elasticsearch-repo"><a href="#新增-etc-yum-repos-d-elasticsearch-repo" class="headerlink" title="新增 /etc/yum.repos.d/elasticsearch.repo"></a>新增 /etc/yum.repos.d/elasticsearch.repo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[elasticsearch-7.x]</span><br><span class="line">name=Elasticsearch repository for 7.x packages</span><br><span class="line">baseurl=https://artifacts.elastic.co/packages/7.x/yum</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch</span><br><span class="line">enabled=1</span><br><span class="line">autorefresh=1</span><br><span class="line">type=rpm-md</span><br></pre></td></tr></table></figure>
+<h3 id="安装-Elasticsearch"><a href="#安装-Elasticsearch" class="headerlink" title="安装 Elasticsearch"></a>安装 Elasticsearch</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install elasticsearch</span><br><span class="line">systemctl start elasticsearch</span><br><span class="line">systemctl enable elasticsearch</span><br></pre></td></tr></table></figure>
+<h3 id="安装-Logstash"><a href="#安装-Logstash" class="headerlink" title="安装 Logstash"></a>安装 Logstash</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install logstash</span><br><span class="line">systemctl start logstash</span><br><span class="line">systemctl enable logstash</span><br></pre></td></tr></table></figure>
+<h3 id="安装-Kibana"><a href="#安装-Kibana" class="headerlink" title="安装 Kibana"></a>安装 Kibana</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install kibana</span><br><span class="line">systemctl start kibana</span><br><span class="line">systemctl enable kibana</span><br></pre></td></tr></table></figure>
+<h3 id="安装-Filebeat"><a href="#安装-Filebeat" class="headerlink" title="安装 Filebeat"></a>安装 Filebeat</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install filebeat</span><br><span class="line">systemctl start filebeat</span><br><span class="line">systemctl enable filebeat</span><br></pre></td></tr></table></figure>
+<h3 id="查看端口是否正常"><a href="#查看端口是否正常" class="headerlink" title="查看端口是否正常"></a>查看端口是否正常</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netstat -lntp |grep 9200</span><br><span class="line">netstat -lntp |grep 5601</span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<li>设置kibana<blockquote>
+<p>/etc/kibana/kibana.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logging.dest: /var/log/kibana/kibana.log</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><h3 id="filebeat-配置"><a href="#filebeat-配置" class="headerlink" title="filebeat 配置"></a>filebeat 配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">- type: log</span><br><span class="line">  enabled: true</span><br><span class="line">  paths:</span><br><span class="line">    - /var/log/nginx/access.log</span><br><span class="line">  # 添加字段信息</span><br><span class="line">  fields:</span><br><span class="line">    logtype: nginx_access</span><br><span class="line">    logsource: nginx_access_log</span><br><span class="line"></span><br><span class="line">- type: log</span><br><span class="line">  enabled: true</span><br><span class="line">  paths:</span><br><span class="line">    - /var/log/nginx/error.log</span><br><span class="line">  # 添加字段信息</span><br><span class="line">  fields:</span><br><span class="line">    logtype: nginx_error</span><br><span class="line">    logsource: nginx_error_log</span><br><span class="line">...</span><br><span class="line">output.logstash:</span><br><span class="line">  hosts: [&quot;localhost:10520&quot;]</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### 测试配置</span><br><span class="line">filebeat -e -c /etc/filebeat/filebeat.yml</span><br></pre></td></tr></table></figure>
+<h3 id="logstash-配置-Rsyslog-日志"><a href="#logstash-配置-Rsyslog-日志" class="headerlink" title="logstash 配置 Rsyslog 日志"></a>logstash 配置 Rsyslog 日志</h3><ul>
+<li><p>logstash 配置 rsyslog 日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">### 编辑 rsyslog 配置，/etc/rsyslog.conf</span><br><span class="line">*.* @@127.0.0.1:10514</span><br><span class="line"></span><br><span class="line">### 编辑 logstash 配置，/etc/logstash/conf.d/system-syslog.conf</span><br><span class="line">input &#123;</span><br><span class="line">  syslog &#123;</span><br><span class="line">    port =&gt; 10514</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">output &#123;</span><br><span class="line">  stdout &#123;</span><br><span class="line">    codec =&gt; rubydebug  # 将日志输出到当前的终端上显示</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">### 测试配置</span><br><span class="line">/usr/share/logstash/bin/logstash --path.settings /etc/logstash/ -f /etc/logstash/conf.d/system-syslog.conf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>logstash 配置 filebeat 日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">  beats &#123;</span><br><span class="line">    port =&gt; 10520</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">output &#123;</span><br><span class="line">  if [fields][logtype] == &quot;nginx_access&quot; &#123;</span><br><span class="line">    elasticsearch &#123;</span><br><span class="line">      hosts =&gt; [&quot;127.0.0.1:9200&quot;]</span><br><span class="line">      index =&gt; &quot;nginx_access-%&#123;+YYYY.MM.dd&#125;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  if [fields][logtype] == &quot;nginx_error&quot; &#123;</span><br><span class="line">    elasticsearch &#123;</span><br><span class="line">      hosts =&gt; [&quot;127.0.0.1:9200&quot;]</span><br><span class="line">      index =&gt; &quot;nginx_error-%&#123;+YYYY.MM.dd&#125;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  #stdout &#123;</span><br><span class="line">  #  codec =&gt; rubydebug  # 将日志输出到当前的终端上显示</span><br><span class="line">  #&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="nginx-配置-Kibana-代理"><a href="#nginx-配置-Kibana-代理" class="headerlink" title="nginx 配置 Kibana 代理"></a>nginx 配置 Kibana 代理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">## 新增密码文件</span><br><span class="line"></span><br><span class="line">htpasswd -c /etc/nginx/passwd/.htpasswd mingo</span><br><span class="line"></span><br><span class="line">## 追加密码用户</span><br><span class="line">htpasswd /etc/nginx/passwd/.htpasswd mingo002</span><br><span class="line"></span><br><span class="line">## 添加nginx配置</span><br><span class="line">    auth_basic &quot;Administrator Login&quot;;</span><br><span class="line">    auth_basic_user_file /etc/nginx/passwd/.htpasswd;</span><br><span class="line"></span><br><span class="line">## 重启</span><br></pre></td></tr></table></figure>
+
+          
         
       
-    </p></div>
+    </div>
     
     
     
