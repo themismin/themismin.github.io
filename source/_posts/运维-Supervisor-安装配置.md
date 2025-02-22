@@ -9,11 +9,15 @@ categories:
   - IT
   - 运维
 ---
+
 ## 安装
 ```
 yum install supervisor
 systemctl start supervisord
 systemctl status supervisord
+systemctl enable supervisord
+systemctl restart supervisord
+
 ```
 
 ## 参数
