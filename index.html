@@ -1,25 +1,2412 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9712139945295705",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="小敏的博客, mingo" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="小敏的博客">
+<meta property="og:url" content="https://blog.themismin.com/index.html">
+<meta property="og:site_name" content="小敏的博客">
+<meta property="og:locale">
+<meta property="article:author" content="小敏-mingo">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.themismin.com/"/>
+
+
+
+
+
+  <title>小敏的博客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小敏的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {% if post.visible !== 'hide' %}
-        {{ post_template.render(post, true) }}
-      {% endif %}
-    {% endfor %}
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/887fe8b2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/887fe8b2.html" itemprop="url">php-上传文件大小限制</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-06-17T22:14:22+08:00">
+                2024-06-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/" itemprop="url" rel="index">
+                    <span itemprop="name">IT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT/%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/887fe8b2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/887fe8b2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/887fe8b2.html" class="leancloud_visitors" data-flag-title="php-上传文件大小限制">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h2><p>413 Request Entity Too Large</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>修改 php 的配置文件 &#x2F;etc&#x2F;php.ini</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">upload_max_filesize = 20M  </span><br><span class="line">post_max_size = 20M</span><br></pre></td></tr></table></figure>
+
+<p>修改 Nginx 的配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http &#123;  </span><br><span class="line">    ...  </span><br><span class="line">    client_max_body_size 20m;  </span><br><span class="line">    ...  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>重启 Nginx 服务和 php-fpm 服务即可。</p>
+<div><h2>推荐文章</h2><ul><li><a href="https://blog.themismin.com/posts/3a328baf.html">运维-Homesead php扩展php-mcrypt 安装</a></li><li><a href="https://blog.themismin.com/posts/1b335d6b.html">运维-yum安裝php56, php73, php74, php80多版本共存</a></li><li><a href="https://blog.themismin.com/posts/5b88765f.html">php-记一次服务器部署问题</a></li><li><a href="https://blogs.kainy.cn/2010/07/ThinKPHP学习笔记-2/">ThinKPHP学习笔记-2</a></li><li><a href="https://blogs.kainy.cn/2010/03/中级PHPer对初学者可能遇见问题的解答/">中级PHPer对初学者可能遇见问题的解答</a></li><li><a href="https://blogs.kainy.cn/2013/01/PHP函数setcookie写入重名cookie/">PHP函数setcookie写入重名cookie</a></li></ul></div>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/64ce2134.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/64ce2134.html" itemprop="url">mysql-创建用户并设置只读权限</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-04-17T23:34:28+08:00">
+                2024-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/64ce2134.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/64ce2134.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/64ce2134.html" class="leancloud_visitors" data-flag-title="mysql-创建用户并设置只读权限">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>首先查看mysql中所有的用户</li>
+</ul>
+<p>SELECT user,host FROM mysql.user;</p>
+<ul>
+<li>查看指定用户的权限情况</li>
+</ul>
+<p>SELECT * FROM mysql.user WHERE user&#x3D;’root’</p>
+<ul>
+<li>创建一个用户</li>
+</ul>
+<p>CREATE USER ‘用户名‘@’%’ IDENTIFIED BY ‘密码’;</p>
+<ul>
+<li>给用户赋予只读权限。数据库名.* （代表只读那个数据库.后的是表只读那个表*代表所有表）</li>
+</ul>
+<p>GRANT SELECT ON 数据库名.* TO ‘用户名‘@’%’; </p>
+<ul>
+<li>刷新权限</li>
+</ul>
+<p>FLUSH PRIVILEGES;</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/cd27b373.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/cd27b373.html" itemprop="url">开发-git推送到不同远程master</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-04-17T20:22:43+08:00">
+                2024-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/cd27b373.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/cd27b373.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/cd27b373.html" class="leancloud_visitors" data-flag-title="开发-git推送到不同远程master">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在开发过程中，我们可能需要将代码推送到不同的远程仓库，例如将代码推送到主仓库和测试仓库。</p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><ol>
+<li><p>添加主仓库和测试仓库的远程仓库地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin &lt;主仓库地址&gt;</span><br><span class="line">git remote add origin-tw &lt;测试1仓库地址&gt;</span><br><span class="line">git remote add origin-hk &lt;测试2仓库地址&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送代码到主仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送代码到测试仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push origin-tw master</span><br><span class="line">git push origin-hk master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拉取代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin-tw master</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin-hk master</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>确保主仓库和测试仓库的代码是同步的。</li>
+<li>确保主仓库和测试仓库的分支是 master。</li>
+<li>确保主仓库和测试仓库的远程仓库地址是正确的。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull &lt;远程主机名&gt; &lt;远程分支&gt;:&lt;本地分支&gt;</span><br><span class="line">git push &lt;远程主机名&gt; &lt;本地分支&gt;:&lt;远程分支&gt;</span><br></pre></td></tr></table></figure>
+<div><h2>推荐文章</h2><ul><li><a href="https://blog.themismin.com/posts/e638a148.html">运维-宝塔系统安装gogs</a></li><li><a href="https://blog.themismin.com/posts/904e2969.html">开发-git删除操作</a></li><li><a href="https://blog.themismin.com/posts/1b7bf0e4.html">PHP-将Laravel部署到服务器</a></li><li><a href="https://chengzhaoxi.xyz/84037790.html">解决国内github访问慢的问题</a></li><li><a href="https://chengzhaoxi.xyz/150d4138.html">处理git下的objects越来越大的问题</a></li><li><a href="https://chengzhaoxi.xyz/73c98410.html">git操作集锦</a></li></ul></div>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/e638a148.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/e638a148.html" itemprop="url">运维-宝塔系统安装gogs</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-04-17T11:56:22+08:00">
+                2024-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/e638a148.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/e638a148.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/e638a148.html" class="leancloud_visitors" data-flag-title="运维-宝塔系统安装gogs">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><ol>
+<li>打开bt软件商店</li>
+<li>安装gogs(Docker应用)</li>
+<li>开通服务器端口 10880 10022 3000</li>
+</ol>
+<h1 id="gogs配置"><a href="#gogs配置" class="headerlink" title="gogs配置"></a>gogs配置</h1><ol>
+<li>数据库类型 SQLite3</li>
+<li>域名配置 git.xxx.com</li>
+<li>SSH 端口号 10022</li>
+<li>应用 URL <a href="http://git.xxx.com/">http://git.xxx.com/</a></li>
+<li>管理员帐号设置</li>
+</ol>
+<ul>
+<li>访问地址<br><a href="http://git.xxx.com:10880/">http://git.xxx.com:10880/</a></li>
+</ul>
+<div><h2>推荐文章</h2><ul><li><a href="https://blog.themismin.com/posts/cd27b373.html">开发-git推送到不同远程master</a></li><li><a href="https://blog.themismin.com/posts/84884080.html">运维-新服务器宝塔环境配置</a></li><li><a href="https://blog.themismin.com/posts/904e2969.html">开发-git删除操作</a></li><li><a href="https://chengzhaoxi.xyz/84037790.html">解决国内github访问慢的问题</a></li><li><a href="https://chengzhaoxi.xyz/150d4138.html">处理git下的objects越来越大的问题</a></li><li><a href="https://chengzhaoxi.xyz/73c98410.html">git操作集锦</a></li></ul></div>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/5ede5441.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/5ede5441.html" itemprop="url">MIUI-adb命令 -- fastboot命令&OEM解锁</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-04-06T15:20:24+08:00">
+                2024-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/5ede5441.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/5ede5441.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/5ede5441.html" class="leancloud_visitors" data-flag-title="MIUI-adb命令 -- fastboot命令&OEM解锁">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一、fastboot刷机<br>1.fastboot 概念<br>fastboot是PC与BootLoader的USB通信的命令行工具，通过向BootLoader传送刷机文件（.img）实现Android系统分区重烧。fastboot需要BootLoader支持，且需要使用USB数据线连接，因此常称为线刷模式。</p>
+<p>2.BootLoader<br>BootLoader是嵌入式设备中用来引导内核启动的一段代码。内核启动是需要一定条件的，当设备上电后会首先运行BootLoader，BootLoader会初始化必要的硬件，比如DDR、Flash、串口等，通过这段程序可以将系统硬件环境设置到一个合适的状态，为进行系统内核调试准备好环境，相关初始化完成后就会去启动内核。<br>（在嵌入式系统中，通常没有BOIS那样的固态程序，因此整个系统的加载启动任务就有BootLoader来完成，BootLoader程序通常安排在嵌入式系统最开始运行的地址处0x0000 0000）</p>
+<p>3.uboot &amp; fastboot<br>uboot（universal bootloader）是一种可以用于多种嵌入式CPU的BootLoader程序。</p>
+<p>在uboot下输入fastboot命令，就可以让uboot进入fastboot模式，刷机就是在fastboot模式下进行刷机。<br>开发板本身不是usb设备，所以当我们的开发板直接通过usb线和主机的usb接口连接时，主机是识别不到一个usb设备的。当我们在uboot下输入fastboot命令时，主机就会识别到一个usb设备，并提示安装驱动。</p>
+<p>4.刷机模式<br>4.1 卡刷<br>Recovery模式（卡刷）:必须拷贝系统ROM<br>在系统进行定制时，编译系统会编译出一份ZIP的压缩包，里面是一些系统分区镜像，提供给客户进行手动升级、恢复系统。需要提前将压缩包内置SDcard，在Recovery模式进行。进入Recovery方法：将手机完全关机后，按住音量键下(上)+电源键，进入BootLoader界面。用音量加减来控制光标，电源键来进行确认(有的机器只能用音量下键进行选择，上键是确认键)。</p>
+<p>4.2 线刷</p>
+<p>fastboot模式（线刷）:通过刷入.img镜像文件，进行分区重烧，无需启动内核<br>在安卓手机中fastboot是一种比Recovery更底层的刷机模式。fastboot在开发板和主机之间定义了一套协议，是一种使用USB数据线连接手机的刷机模式，这就是所谓的线刷。</p>
+<p>5.刷机常用分区<br>分区	作用<br>splash1	开机画面，使用Nandroid backup备份系统后的文件为splash1.img<br>recovery	该分区是恢复模式（即开机按Home+poweri进入的界面，使用Nandroid backup备份为recovery.img<br>boot	内核启动分区，使用Nandroid backup备份为boot.img<br>system	Android系统部分，目录表示为&#x2F;system,通常为只读，使用Nandroid backup备份为system.img<br>cache	缓存文件夹，目录表示为&#x2F;cache,事实上除了T-mobile的OTA更新外，作用不大。使用Nandroid backup备份为cache.img<br>userdata	用户安装的软件及各种数据，目录为&#x2F;data,使用Nandroid backup备份为data.img<br>二、fastboot命令<br>重启相关<br>fastboot reboot                 重启⼿机<br>fastboot reboot-bootloader      重启到bootloader模式,其实就是再次进入fastboot<br>fastboot -w reboot              清除手机中所有数据然后重启<br>&#x2F;&#x2F; fastboot -w reboot 等同于系统中的“恢复出厂设置”，或Recovery模式的“清空所有数据”操作</p>
+<p>擦除相关（erase）<br>fastboot erase {partition}                      擦除分区<br>fastboot erase boot                             擦除boot分区<br>fastboot erase recovery                         擦除recovery分区<br>fastboot erase system                           擦除system分区<br>fastboot erase userdata                         擦除userdata分区<br>fastboot erase cache                            擦除cache分区<br>写⼊分区（flash）<br>fastboot flash {partition} {*.img}              烧录img文件至对应分区<br>fastboot flash boot boot.img                    写⼊boot分区<br>fastboot flash recovery recovery.img            写⼊recovery分<br>fastboot flash system system.img                写⼊system分区<br>查看相关<br>fastboot getvar all                             获取⼿机的全部信息<br>fastboot devices                                查看fastboot模式下连接的手机<br>其它<br>fastboot boot &lt;内核镜像文件名或路径&gt;              临时启动镜像，不会烧录和替换内核文件到存储中<br>fastboot oem device-info                         输出当前BL锁状态(非MTK)<br>fastboot oem lks                                 输出当前BL锁状态(MTK)<br>fastboot oem poweroff                           拔掉数据线后关机<br>fastboot oem lock                               重新上BL锁并清空所有数据(需未开启root)<br>fastboot oem unlock                             解除BL锁并清空所有数据<br>&#x2F;&#x2F;小米手机必须绑定账号,主动申请解锁,等待7天,使用工具才行<br>fastboot flashing unlock                        解锁设备<br>android fastboot常见命令</p>
+<p>三、OEM解锁（MTK）<br>解锁命令&amp;操作<br>将手机设为开发者模式，在开发者模式中选择OEM 解锁</p>
+<p>连接adb,重启到bootloader模式</p>
+<p>adb reboot bootloader<br>当手机画面中出现fastboot mode，解锁设备</p>
+<p>fastboot flashing unlock<br>根据提示按下音量上键进行解锁，提示成功之后，重启设备：</p>
+<p>fastboot reboot<br>重启后会提醒设备处于解锁状态，会重置设备数据等操作。</p>
+<p>push文件<br>获取root权限</p>
+<p>adb root<br>关闭分区检测功能</p>
+<p>在Android 7之后，对分区会进行相应的验证，例如system分区，不能向之前的版本一样，使用adb root;adb remount对system分区进行挂载，需要先关闭分区检测功能.</p>
+<p>adb disable-verity<br>执行adb disable-verity后需要重启设备</p>
+<p>adb reboot<br>设备重启后再次获取root权限</p>
+<p>adb root<br>挂载（使分区可读可写）</p>
+<p>adb remount<br>push以后要重启设备</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/84884080.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/84884080.html" itemprop="url">运维-新服务器宝塔环境配置</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-04-03T15:45:20+08:00">
+                2024-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/84884080.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/84884080.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/84884080.html" class="leancloud_visitors" data-flag-title="运维-新服务器宝塔环境配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>完成 <a href="https://blog.themismin.com/posts/9d04baee.html">CentOS-服务器初始化配置</a></p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li><p>安全组开放以下端口<br>8888、20 、21、 39000-40000端口、22 (SSH)、80、443（网站及SSL）<br>8888,3389,888（phpmyadmin）,80,443,20,21</p>
+</li>
+<li><p>将域名解析道该服务器</p>
+</li>
+<li><p>在线安装<br>打开 <a href="https://www.bt.cn/new/download.html">Linux面板8.0.6在线安装</a><br>填好表单自动安装（ssh不要关闭密码登录）</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Nginx-1.20</span><br><span class="line">PHP-8.0</span><br><span class="line">MySQL-5.7</span><br><span class="line">不安装PHPMyAdmin</span><br><span class="line">pureftpd</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>配置<br>打开宝塔管理面板</li>
+</ol>
+<ul>
+<li>修改端口</li>
+<li>绑定域名</li>
+<li>立即【开启SSL证书】保护面板安全（Let’s Encrypt 证书）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 进入服务器目录</span><br><span class="line">cd /www/server/panel/ssl</span><br><span class="line">2. 重新生成密钥</span><br><span class="line">openssl pkcs12 -export -in certificate.pem  -inkey privateKey.pem  -out cp.p12</span><br><span class="line">3. 输入密码(可以随便设置,但是不能为空, 建议设置成官方的密码 怕忘记 www.bt.cn )</span><br><span class="line">Enter Export Password:</span><br><span class="line">Verifying - Enter Export Password:</span><br><span class="line">4. 下载cp.p12 文件 导入钥匙串,并设置始终信任,保存,输入密码.</span><br><span class="line">5. 重启浏览器 刷新 ok了</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>配置php</li>
+</ol>
+<ul>
+<li>安装扩展<br>fileinfo redis mcrypt imagemagick exif intl xsl Swoole4</li>
+<li>移除禁用函数</li>
+</ul>
+<ol start="6">
+<li><p>网站-添加站点<br>添加站点、开启SSL（Let’s Encrypt）<br>网站目录设置：&#x2F;public<br>伪静态设置：laravel5</p>
+</li>
+<li><p>服务器www账号配置</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 修改用户登入时的目录</span><br><span class="line">usermod -d /home/www www</span><br><span class="line"># 修改用户登入后所使用的shell</span><br><span class="line">usermod -s /bin/bash www</span><br><span class="line">cat /etc/passwd</span><br><span class="line"># 创建www项目配置目录</span><br><span class="line">mkdir -p /www/wwwconfig</span><br><span class="line">chown www:www /www/wwwconfig/</span><br><span class="line"># 切换 www 账号</span><br><span class="line">su - www</span><br><span class="line"></span><br><span class="line"># www账号下 生成证书</span><br><span class="line">ssh-keygen</span><br><span class="line"># 添加公钥</span><br><span class="line">vim .ssh/authorized_keys</span><br><span class="line">chmod 600 .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<div><h2>推荐文章</h2><ul><li><a href="https://blog.themismin.com/posts/e638a148.html">运维-宝塔系统安装gogs</a></li><li><a href="https://blog.themismin.com/posts/f872f762.html">centos7-Docker安装</a></li><li><a href="https://blog.themismin.com/posts/5b88765f.html">php-记一次服务器部署问题</a></li><li><a href="https://blogs.kainy.cn/2024/11/宝塔面板只保留最近3个备份文件的方法/">宝塔面板只保留最近3个备份文件的方法</a></li><li><a href="https://blogs.kainy.cn/2024/11/常见App的AppID，用于黄白助手小尾巴/">常见App的AppID，用于黄白助手小尾巴</a></li><li><a href="https://blogs.kainy.cn/2024/03/阿里云使用OSS备份ECS整机/">ECS整机备份（通过OSS）</a></li></ul></div>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/5c8c165f.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/5c8c165f.html" itemprop="url">运维-配置</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-03-28T12:06:47+08:00">
+                2024-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/5c8c165f.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/5c8c165f.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/5c8c165f.html" class="leancloud_visitors" data-flag-title="运维-配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="安卓手机"><a href="#安卓手机" class="headerlink" title="安卓手机"></a>安卓手机</h1><ul>
+<li><a href="https://thirdislandchain.com/downloads/clash-android.apk">点我下载APP</a></li>
+</ul>
+<p>打开APP后，点击主页的“配置”</p>
+<p>点击右上角的“+”号</p>
+<p>点击“从URL导入”</p>
+<p>进入管理页面左侧栏复制clash订阅地址<br>URL处粘贴您拷贝的订阅链接<br>名称处随意填写或者写“PROXE”<br>自动更新推荐设置为1440分钟（24小时），最后点保存。</p>
+<p>选择加载后的配置，然后返回主界面</p>
+<p>点击启动</p>
+<p>第一次使用，会弹出链接请求，一定要点“确定”，点取消将会无法使用</p>
+<p>链接成功后就如下图所示，然后就可以进去代理界面去选择您想使用的节点了</p>
+<p>最后点击“手动切换”选择你需要使用的节点即可。</p>
+<h1 id="windows电脑"><a href="#windows电脑" class="headerlink" title="windows电脑"></a>windows电脑</h1><ul>
+<li><a href="https://thirdislandchain.com/downloads/Clash.for.Windows.Setup.0.20.39.exe">点我下载APP</a></li>
+<li><a href="https://thirdislandchain.com/downloads/app.asar">汉化补丁(复制到安装目录&#x2F;resources下覆盖原文件) </a></li>
+</ul>
+<p>安装时请选择 为使用这台电脑的任何人安装（所有用户）<br>运行时请右键，以管理员身份运行<br>进入“产品服务”里的“产品管理”，然后进入左侧”订阅信息“的”管理面板“，</p>
+<p>复制”chash托管“</p>
+<p>打开客户端的侧边栏的 Profiles，粘贴刚才复制的订阅地址，点击 Download</p>
+<p>切换到 General 选项栏，打开 System Proxy 开关，按需打开 Start with Windows 开关</p>
+<p>节点选择<br>切换到代理设置（Proxies）选项栏，选择需要的模式及节点<br>Global：全局模式（不推荐）<br>Rule：通过规则进行分流（推荐）<br>Direct：直连模式<br>Script：暂时用不上</p>
+<h1 id="MAC电脑"><a href="#MAC电脑" class="headerlink" title="MAC电脑"></a>MAC电脑</h1><ul>
+<li><a href="https://thirdislandchain.com/downloads/ClashX.dmg">点我下载APP</a></li>
+</ul>
+<p>安装完毕后，可以在电脑右上角的状态栏里找到小猫咪图标，然后按照下方教程配置</p>
+<p>点击“添加”按钮,进入本站用户中心-产品服务-您的产品-左下角的订阅信息<br>复制第二个订阅地址并黏贴到clash里，备注随意填写。</p>
+<p>添加后会自动更新订阅，然后关闭窗口</p>
+<p>点击配置按钮，选择我们的配置</p>
+<p>选择所需节点</p>
+<p>最后设定为系统代理即可</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/3a328baf.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/3a328baf.html" itemprop="url">运维-Homesead php扩展php-mcrypt 安装</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-03-10T19:48:15+08:00">
+                2024-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/3a328baf.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/3a328baf.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/3a328baf.html" class="leancloud_visitors" data-flag-title="运维-Homesead php扩展php-mcrypt 安装">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Homesead-安装-php-mcrypt"><a href="#Homesead-安装-php-mcrypt" class="headerlink" title="Homesead 安装 php-mcrypt"></a>Homesead 安装 php-mcrypt</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php7.4-mcrypt</span><br><span class="line">sudo apt-get install php8.0-mcrypt</span><br></pre></td></tr></table></figure>
+
+<h3 id="Centos7-安装-php-mcrypt"><a href="#Centos7-安装-php-mcrypt" class="headerlink" title="Centos7 安装 php-mcrypt"></a>Centos7 安装 php-mcrypt</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install php74-php-pecl-mcrypt</span><br><span class="line">brew install php80-php-pecl-mcrypt</span><br></pre></td></tr></table></figure>
+
+<h3 id="MAC-切换php"><a href="#MAC-切换php" class="headerlink" title="MAC 切换php"></a>MAC 切换php</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew-php-switcher 8.0</span><br></pre></td></tr></table></figure><div><h2>推荐文章</h2><ul><li><a href="https://blog.themismin.com/posts/887fe8b2.html">php-上传文件大小限制</a></li><li><a href="https://blog.themismin.com/posts/1b335d6b.html">运维-yum安裝php56, php73, php74, php80多版本共存</a></li><li><a href="https://blog.themismin.com/posts/28ce2d58.html">MAC-VBoxManage无法打开homestead</a></li><li><a href="https://blogs.kainy.cn/2010/07/ThinKPHP学习笔记-2/">ThinKPHP学习笔记-2</a></li><li><a href="https://blogs.kainy.cn/2010/03/中级PHPer对初学者可能遇见问题的解答/">中级PHPer对初学者可能遇见问题的解答</a></li><li><a href="https://blogs.kainy.cn/2013/01/PHP函数setcookie写入重名cookie/">PHP函数setcookie写入重名cookie</a></li></ul></div>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/1fb7ce00.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/1fb7ce00.html" itemprop="url">运维-Homesead Redis 配置</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-03-01T01:04:42+08:00">
+                2024-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/1fb7ce00.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/1fb7ce00.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/1fb7ce00.html" class="leancloud_visitors" data-flag-title="运维-Homesead Redis 配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+        
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.themismin.com/posts/226071bf.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小敏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/226071bf.html" itemprop="url">CentOS-Backup-配置服务器</a></h1>
+        
+
+        <div class="post-meta">
+
+
+          
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-02-17T20:29:36+08:00">
+                2024-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/226071bf.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/226071bf.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/226071bf.html" class="leancloud_visitors" data-flag-title="CentOS-Backup-配置服务器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 登录服务器</span></span><br><span class="line">ssh centoshd1</span><br><span class="line">716381</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新</span></span><br><span class="line">yum update</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 vim gcc</span></span><br><span class="line">yum install wget vim gcc yum-utils bzip2 lrzsz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改主机名</span></span><br><span class="line">hostname</span><br><span class="line">hostname centoshd1</span><br><span class="line">vim /etc/hostname</span><br><span class="line">vim /etc/sysconfig/network</span><br><span class="line">vim /etc/hosts</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">reboot</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 SSH 公钥</span></span><br><span class="line">ssh-keygen</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置秘钥登录</span></span><br><span class="line"><span class="built_in">cd</span> .ssh/</span><br><span class="line"><span class="built_in">touch</span> authorized_keys</span><br><span class="line">vim authorized_keys</span><br><span class="line"><span class="built_in">chmod</span> 400 ~/.ssh/authorized_keys</span><br><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line">systemctl restart sshd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 firewalld</span></span><br><span class="line">ifconfig</span><br><span class="line">iptables -L</span><br><span class="line">yum install firewalld firewall-config</span><br><span class="line">systemctl start firewalld</span><br><span class="line">systemctl <span class="built_in">enable</span> firewalld.service</span><br><span class="line">systemctl status firewalld</span><br><span class="line">firewall-cmd --state</span><br><span class="line">firewall-cmd --get-active-zones</span><br><span class="line">firewall-cmd --get-zone-of-interface=eth0</span><br><span class="line">firewall-cmd --zone=public --list-all</span><br><span class="line">firewall-cmd --complete-reload</span><br><span class="line">systemctl restart firewalld</span><br><span class="line">firewall-cmd --zone=public --add-port=443/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --list-all</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">firewall-cmd --zone=public --list-all</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置yum</span></span><br><span class="line">wget -q http://rpms.remirepo.net/enterprise/remi-release-7.rpm</span><br><span class="line">wget -q https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</span><br><span class="line">rpm -Uvh remi-release-7.rpm epel-release-latest-7.noarch.rpm</span><br><span class="line"><span class="built_in">rm</span> -rf epel-release-latest-7.noarch.rpm</span><br><span class="line"><span class="built_in">rm</span> -rf remi-release-7.rpm</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 nginx</span></span><br><span class="line">yum install nginx</span><br><span class="line">systemctl start nginx</span><br><span class="line">systemctl <span class="built_in">enable</span> nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 php7.1</span></span><br><span class="line">yum-config-manager --<span class="built_in">enable</span> remi-php71</span><br><span class="line">yum install php php-fpm php-mbstring php-xml php-pdo php-mysqlnd php-devel</span><br><span class="line">vim /etc/php.ini</span><br><span class="line"><span class="built_in">chown</span> root:nginx /var/lib/php/opcache</span><br><span class="line"><span class="built_in">chown</span> root:nginx /var/lib/php/session</span><br><span class="line"><span class="built_in">chown</span> root:nginx /var/lib/php/wsdlcache</span><br><span class="line"><span class="built_in">chown</span> nginx:root /var/log/php-fpm</span><br><span class="line">vim /etc/php-fpm.d/www.conf</span><br><span class="line">systemctl start php-fpm</span><br><span class="line">systemctl <span class="built_in">enable</span> php-fpm</span><br><span class="line">php --version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 mariadb</span></span><br><span class="line">yum install mariadb-server mariadb</span><br><span class="line">systemctl start mariadb</span><br><span class="line">mysql_secure_installation</span><br><span class="line">systemctl <span class="built_in">enable</span> mariadb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 git</span></span><br><span class="line">yum install git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 composer</span></span><br><span class="line">curl -sS https://getcomposer.org/installer | php</span><br><span class="line"><span class="built_in">mv</span> composer.phar /usr/local/bin/composer</span><br><span class="line">composer </span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 iftop</span></span><br><span class="line">yum install iftop</span><br><span class="line">iftop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 themismin</span></span><br><span class="line"><span class="comment">## 添加数据库</span></span><br><span class="line">mysql -hlocalhost -uroot -p</span><br><span class="line">CREATE DATABASE themismin;</span><br><span class="line">create user <span class="string">&#x27;themismin&#x27;</span>@<span class="string">&#x27;%&#x27;</span> identified by <span class="string">&#x27;themismin&#x27;</span>;</span><br><span class="line">GRANT ALL PRIVILEGES ON themismin.* TO <span class="string">&#x27;themismin&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">show grants <span class="keyword">for</span> <span class="string">&#x27;themismin&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment">## 添加项目文件</span></span><br><span class="line"><span class="built_in">cd</span> /var/www/</span><br><span class="line">git <span class="built_in">clone</span> git@git.coding.net:ThemisMin/themismin.git</span><br><span class="line"><span class="built_in">cd</span> themismin/htdoc/</span><br><span class="line">composer install -vvv</span><br><span class="line">composer run-script post-root-package-install</span><br><span class="line">composer run-script post-create-project-cmd</span><br><span class="line">composer run-script post-install-cmd</span><br><span class="line">vim .<span class="built_in">env</span></span><br><span class="line">composer run-script post-install-cmd</span><br><span class="line">php artisan migrate --seed</span><br><span class="line">php artisan spider:site-init</span><br><span class="line"><span class="comment">## 设置项目用户</span></span><br><span class="line"><span class="built_in">cd</span> /var/www/themismin</span><br><span class="line">useradd -s /sbin/nologin -g nginx themismin</span><br><span class="line">usermod -s /bin/bash themismin</span><br><span class="line">sh release_prod.sh</span><br><span class="line"><span class="comment">## 设置项目任务</span></span><br><span class="line">crontab -u themismin -e</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 friso 分词</span></span><br><span class="line"><span class="built_in">cd</span> /opt/</span><br><span class="line">git <span class="built_in">clone</span> https://git.oschina.net/lionsoul/friso.git</span><br><span class="line"><span class="built_in">cd</span> /opt/friso/src/</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"><span class="built_in">cp</span> /usr/lib/libfriso.so /usr/lib64/</span><br><span class="line"><span class="comment">## 使用 friso</span></span><br><span class="line">friso -init /opt/friso/friso.ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 scws 分词</span></span><br><span class="line"><span class="built_in">cd</span> /opt/</span><br><span class="line">wget http://www.xunsearch.com/scws/down/scws-1.2.3.tar.bz2</span><br><span class="line">tar xvjf scws-1.2.3.tar.bz2</span><br><span class="line"><span class="built_in">cd</span> scws-1.2.3/</span><br><span class="line">./configure --enable-namerule --prefix=/usr/local/scws</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">/usr/local/scws/bin/scws -h</span><br><span class="line"><span class="comment">## 添加词典</span></span><br><span class="line"><span class="built_in">cd</span> /opt/</span><br><span class="line">wget http://www.xunsearch.com/scws/down/scws-dict-chs-utf8.tar.bz2</span><br><span class="line">tar xvjf scws-dict-chs-utf8.tar.bz2</span><br><span class="line"><span class="built_in">mv</span> dict.utf8.xdb /usr/local/scws/etc/</span><br><span class="line"><span class="comment">## 安装 php-scws 扩展</span></span><br><span class="line"><span class="built_in">cd</span> /opt/scws-1.2.3/phpext/</span><br><span class="line">phpize</span><br><span class="line">./configure --<span class="built_in">help</span></span><br><span class="line">./configure --with-scws=/usr/local/scws</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line"><span class="built_in">cd</span> /etc/php-zts.d/</span><br><span class="line">vim 40-scws.ini</span><br><span class="line"><span class="built_in">cp</span> 40-scws.ini /etc/php.d/</span><br><span class="line">php -m</span><br><span class="line">systemctl restart php-fpm</span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
   </section>
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">98</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">150</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/themismin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:themismin@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://plus.google.com/" title="Google" target="_blank">Google</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://twitter.com/" title="Twitter" target="_blank">Twitter</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.facebook.com/" title="FB Page" target="_blank">FB Page</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://vk.com/" title="VK Group" target="_blank">VK Group</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://stackoverflow.com/" title="StackOverflow" target="_blank">StackOverflow</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://youtube.com/" title="YouTube" target="_blank">YouTube</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://instagram.com/" title="Instagram" target="_blank">Instagram</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小敏-mingo</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+<div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <span>本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+  <span>本站访客数<span id="busuanzi_value_site_uv"></span>次</span>
+</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '1DQSfsF895qG5aRVX3uJtvvL-gzGzoHsz',
+        appKey: 'Hnjs1VR4xXd6lECIsgxwCMIE',
+        placeholder: '说点什么',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("1DQSfsF895qG5aRVX3uJtvvL-gzGzoHsz", "Hnjs1VR4xXd6lECIsgxwCMIE");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
