@@ -42,3 +42,6 @@ pip install -U weditor
 ```
 python -m weditor
 ```
+
+## 其他
+参考：https://www.cnblogs.com/gancuimian/p/16725664.html
