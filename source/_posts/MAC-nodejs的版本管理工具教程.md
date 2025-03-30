@@ -68,3 +68,9 @@ nvm install 14
 nvm use 18
 ```
 
+## 5. 切换默认的版本号
+
+```shell
+nvm alias default v14.21.3   
+```
+
